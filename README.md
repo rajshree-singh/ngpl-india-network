@@ -1,19 +1,21 @@
 # Indian Natural Gas Pipeline Network — Graph and GIS Dataset
 
-**Status: IN PROGRESS — not yet suitable for publication.**
-Steps 1, 2, 6, 7 and 8 are complete and validated. The hazard-exposure layers are not. Section 9 states
-exactly what exists and what does not. Do not cite the GIS or exposure layers:
-the exposure layers are still derived from geometry this project has rejected
-(§8.1), and the reconstructed routes now in `gis/` are straight-line
-approximations, not alignments (§8.1, §8.8).
+**Status: released. The pipeline network dataset is complete and validated.**
+Hazard-exposure layers (seismic, population, flood) are **not part of this
+release** and are not present in this repository. Section 9 states exactly what
+exists and what does not.
+
+**Read §8 before using the geometry.** The routes in `gis/` are straight-line
+reconstructions between settlement centroids, not surveyed alignments (§8.1).
 
 | | |
 |---|---|
-| Version | v0.6-dev (2026-09-15) |
+| Version | 1.0.0 (2026-09-16) |
 | Primary source | PNGRB, *Natural Gas Pipeline Networks in India — December 2025* |
 | Coverage | 99 authorized natural gas pipelines; 37 in analytical scope; 27 in the v1 graph |
 | Spatial reference | EPSG:4326 published; EPSG:7755 for all metric operations |
-| Licence | See §11 |
+| Licence | Data CC BY 4.0; code MIT. See §11 |
+| Cite as | `CITATION.cff` |
 
 ---
 
@@ -21,8 +23,8 @@ approximations, not alignments (§8.1, §8.8).
 
 A machine-readable reconstruction of India's authorized natural gas pipeline
 network, built from the Petroleum and Natural Gas Regulatory Board's periodic
-NGPL register, with a node–edge graph representation and geospatial hazard
-exposure layers.
+NGPL register, with a node–edge graph representation, reconstructed route
+geometry and a topological vulnerability analysis.
 
 It is intended for national-scale network analysis. It is **not** an engineering
 dataset: it contains no surveyed alignments, no as-built centrelines, and no
@@ -122,14 +124,16 @@ and the state filter could not reject it. The rule now is:
 
 ### 5.3 Corroboration
 
-40 of 47 resolved nodes were cross-checked against an independent coordinate
-table of unknown provenance, used only to disambiguate and to verify — never as
-a published value.
+**44 of the 51 resolved nodes** were cross-checked against an independent
+coordinate table of unknown provenance, used only to disambiguate and to verify —
+never as a published value. `11_validate_nodes.py` recomputes every offset from
+that table rather than trusting the stored `legacy_delta_km`, because a
+coordinate can be moved without its metadata being updated.
 
 | | |
 |---|---|
-| median offset | 0.76 km |
-| 90th percentile | 5.32 km |
+| median offset | 0.86 km |
+| 90th percentile | 6.57 km |
 | maximum | 13.35 km (Koottanad) |
 | disagreements > 25 km | **0** |
 
@@ -161,7 +165,7 @@ confirmed by *both* name similarity and spatial agreement:
 |---|---|
 | Published geometry | EPSG:4326 |
 | Length, area, buffering | **EPSG:7755** (WGS 84 / India NSF LCC) |
-| Seismic zone source layer | custom LCC, numerically identical to EPSG:7755 (max deviation 4.7 cm nationally) |
+| Seismic zone source layer (not in this release) | custom LCC, numerically identical to EPSG:7755 (max deviation 4.7 cm nationally) |
 
 EPSG:3395 (World Mercator) must not be used for metric work here. A 5 km buffer
 built in it has a true half-width of 4.5–4.9 km varying with latitude, and
@@ -200,12 +204,7 @@ geodesic length from the geometry rather than reading the stored value.
 
 Every validator was mutation-tested — the output is deliberately corrupted N ways
 and each corruption must be rejected. A validator that has never failed has not
-been shown to work.
-
-| validator | mutations | caught |
-|---|---|---|
-| `10_validate_master.py` | 13 | 13 |
-| `12_validate_routes.py` | 14 | 14 |
+been shown to work. The full tally is below.
 
 `scripts/13_validate_tables.py` — **52 checks in five groups**, covering the
 states, coverage, offtake and edge tables. Two carry the step. **S-12** recomputes
@@ -223,8 +222,16 @@ hand-rolled graph algorithm that nothing has checked is not evidence. If network
 is absent the group is SKIPPED and the script exits non-zero — never reported as
 a pass.
 
-**It immediately earned its place.** The hand-written betweenness was exactly
-twice the correct value: on an undirected graph Brandes visits every pair from
+**A second display defect, found while preparing this release.** The node
+validator printed the median legacy offset as `v[len(v)//2]`, which on an
+even-length list is the upper middle value rather than a median. Over the 44
+comparable nodes it reported 0.95 km where the median is 0.86 km. No check was
+ever wrong — the line only prints — but the wrong figure had been quoted in §5.3
+of this README, which is precisely how a display bug becomes a published one.
+Both the code and §5.3 are corrected.
+
+**The cross-check immediately earned its place.** The hand-written betweenness
+was exactly twice the correct value: on an undirected graph Brandes visits every pair from
 both ends, so the accumulated score must be halved before normalising. The error
 changed no ranks, so nothing in the printed output looked wrong. Only the
 independent implementation caught it.
@@ -257,7 +264,7 @@ name. **Validate the bytes on disk, not a library's interpretation of them.**
 
 ### 7.2 Closure proofs
 
-Three totals printed in the register are reproduced by transcriptions built
+**Five** totals printed in the register are reproduced by transcriptions built
 independently of them. A reader can check each against the public PDF without
 running any code — which is worth more than any number of internal assertions.
 
@@ -298,8 +305,9 @@ rather than totals; and its bounding boxes extend past the national border, so
 its results include two pipelines in Qinghai, China. Neither defect changes the
 finding, which rests on the name-match test, not the totals.
 
-The 5 km buffer and the seismic, population and flood exposure tables remain
-invalid pending regeneration at Steps 7–9.
+The 5 km buffer and the seismic, population and flood exposure tables of earlier
+versions were invalidated with that geometry and have **not** been rebuilt. They
+are not in this release (§9.2).
 
 **8.2 Coordinates are settlement centroids, not facilities.** See §5.
 
@@ -441,50 +449,75 @@ without its range.
 
 ## 9. Contents
 
-Status is stated per file. Nothing marked *pending* should be used.
-
 ```
-data_raw/                                    immutable after ingest
-  20251231_NGPL.pdf                          primary source                 COMPLETE
-  external/gazetteer/                        GeoNames IN.txt, admin1 codes  COMPLETE
-  external/SOURCES.md                        publisher, licence, checksums  COMPLETE
-  legacy_v0/                                 superseded versions, preserved COMPLETE
+data_raw/
+  external/SOURCES.md          publisher, licence, checksums, access dates   COMPLETE
+  external/gazetteer/          GeoNames IN.txt + admin1 codes    NOT IN REPO, fetched
+  legacy_v0/                   superseded files, kept as validator inputs     COMPLETE
+  20251231_NGPL.pdf            primary source                    NOT IN REPO, fetched
 
 data_processed/
-  pipeline_master.csv          99 rows, 20 cols, 44/44 checks passing       COMPLETE
-  pipeline_topology.csv        37 rows; 27 linear / 10 areal                COMPLETE
-  node_candidates.csv          74 waypoint rows, 56 distinct names          COMPLETE
-  unsourced_locations.csv      63 excluded locations, with reasons          COMPLETE
-  node_geocode_review.csv      every candidate + evidence, for audit        COMPLETE
+  pipeline_master.csv          99 rows, 20 cols, 44/44 checks passing        COMPLETE
+  pipeline_topology.csv        37 rows; 27 linear / 10 areal                 COMPLETE
+  node_candidates.csv          74 waypoint rows, 56 distinct names           COMPLETE
+  unsourced_locations.csv      63 excluded locations, with reasons           COMPLETE
+  node_geocode_review.csv      every candidate + evidence, for audit         COMPLETE
   pipeline_nodes.csv           56 nodes, 51 resolved, 23/23 checks passing   COMPLETE
   route_segments.csv           47 waypoint pairs; 39 drawable, 8 gapped      COMPLETE
   route_status.csv             37 rows; geometry status per pipeline         COMPLETE
-  pipeline_states.csv          157 rows, one per pipeline x state, Cat. A     COMPLETE
-  pipeline_state_coverage.csv  37 rows; the s8.8 finding, Category C          COMPLETE
-  pipeline_offtakes.csv        115 CGD tap-offs; closes on 558 km twice       COMPLETE
-  pipeline_edges.csv           47 edges; 8 published without geometry         COMPLETE
-  node_vulnerability.csv       56 nodes; every metric on both graphs, Cat. C   COMPLETE
-  edge_criticality.csv         47 edges; bridge status on both graphs          COMPLETE
-  network_summary.csv          2 rows, one per graph                           COMPLETE
-  pipeline_inventory_{seismic,population,flood}.csv                         pending
-  pipeline_inventory_gis.csv   integrated analytical table                  pending
+  pipeline_states.csv          157 rows, one per pipeline x state, Cat. A    COMPLETE
+  pipeline_state_coverage.csv  37 rows; the §8.8 finding, Category C         COMPLETE
+  pipeline_offtakes.csv        115 CGD tap-offs; closes on 558 km twice      COMPLETE
+  pipeline_edges.csv           47 edges; 8 published without geometry        COMPLETE
+  node_vulnerability.csv       56 nodes; every metric on both graphs, Cat. C COMPLETE
+  edge_criticality.csv         47 edges; bridge status on both graphs        COMPLETE
+  network_summary.csv          2 rows, one per graph                         COMPLETE
 
 gis/
   pipeline_routes.geojson      24 features, 39 segments, 47/47 checks        COMPLETE
-  osm_pipelines_raw.geojson    OSM survey output — EVIDENCE ONLY, see §8.1   reference
-  pipeline_buffer_5km.geojson  5 km corridor, EPSG:7755                      pending
 
 metadata/
-  changelog.csv                substantive corrections, with sources        COMPLETE
-  data_dictionary.csv          every column, with provenance category       COMPLETE
+  changelog.csv                substantive corrections, with sources         COMPLETE
+  data_dictionary.csv          209 rows: every column, with its category     COMPLETE
 
-scripts/                       numbered, deterministic, run in order        COMPLETE
+scripts/                       21 files, numbered, deterministic, in order   COMPLETE
   ngpl_paths.py                package root + the shared state normaliser
+
+LICENSE                        MIT, for the code
+LICENSE-DATA.md                CC BY 4.0, for the data
+CITATION.cff                   how to cite this dataset
+requirements.txt               Python dependencies
+GITHUB_SETUP.md                how this repository was published
 ```
+
+### 9.1 What is deliberately not in this repository
+
+Four things are absent by choice, not by oversight. None of them affects
+reproducibility: each is fetched or regenerated by a script that is included.
+
+| absent | why | how to get it |
+|---|---|---|
+| `20251231_NGPL.pdf` | a Government of India publication whose redistribution terms are not stated | `scripts/00a_fetch_source.py` downloads it and **verifies its SHA-256**, so a different release of the register cannot be used by mistake |
+| `external/gazetteer/IN.txt` | 69.6 MB, and freely available from its publisher | `scripts/00b_fetch_gazetteer.py` |
+| `gis/osm_pipelines_raw.geojson` | derived from OpenStreetMap, which is licensed ODbL; redistributing it would place a share-alike obligation on this package | `scripts/06_survey_osm_pipelines.py` regenerates it |
+| `osm_pipeline_survey.csv`, `facility_candidates.csv` | same reason | `scripts/06` and `scripts/05` regenerate them |
+
+The OSM outputs are **evidence, not results**. §8.1 reports the finding they
+support — 2 of 30 pipeline names matched — and that finding does not depend on
+redistributing the files.
+
+### 9.2 Not in this release
+
+The hazard-exposure work (5 km corridor buffer, seismic, population and flood
+exposure) is **not part of version 1.0**. Earlier attempts were invalidated when
+the geometry they rested on was rejected (§8.1), and they have not been rebuilt.
+No file in this repository contains an exposure figure. §8.5 explains why, if
+they are rebuilt, they must be named `*_exposure_score` and not `*_risk_score`.
 
 ## 10. Reproduction
 
 ```bash
+python scripts/00a_fetch_source.py           # downloads the register, VERIFIES its checksum
 python scripts/00b_fetch_gazetteer.py        # downloads GeoNames, writes SOURCES.md
 python scripts/01_build_pipeline_master.py   # the 99-row authoritative universe
 python scripts/10_validate_master.py         # gate — must print ALL CHECKS PASSED
@@ -508,6 +541,11 @@ python scripts/12_validate_routes.py --mutate   # 14/14
 python scripts/13_validate_tables.py --mutate   # 15/15
 python scripts/15_validate_vulnerability.py --mutate  # 15/15
 ```
+
+Run `00a` first. It exists because PNGRB publishes this register several times a
+year and the data-bank page carries many releases. Every table in this package
+builds perfectly from the wrong release — with different numbers, silently. The
+checksum makes that impossible.
 
 **Paths need no configuration.** `scripts/ngpl_paths.py` resolves the package
 root as the parent of the folder it sits in, so the package runs unchanged from a
@@ -546,8 +584,20 @@ verification: 2 December 2022, 23 May 2022, 25 June 2021, 27 August 2020, from
 **Third-party corroboration.** Global Energy Monitor, `https://www.gem.wiki/`,
 used only where no PNGRB release settles a question, and cited as third-party.
 
-Licence for this dataset, and the citation to use, are to be set before release.
-Redistribution terms for the seismic zone layer must be confirmed first.
+### Licence
+
+- **Data** (`data_processed/`, `gis/`, `metadata/`, `data_raw/legacy_v0/`):
+  Creative Commons Attribution 4.0 International (CC BY 4.0). See
+  `LICENSE-DATA.md`.
+- **Code** (`scripts/`): MIT Licence. See `LICENSE`.
+
+Neither licence extends to the external sources listed above, which keep their
+own terms and are not redistributed here (§9.1).
+
+### Citation
+
+See `CITATION.cff`. GitHub renders a ready-made citation from it via the
+**Cite this repository** button.
 
 ## 12. Change log
 
@@ -579,3 +629,10 @@ source. The largest to date:
   the drawable topology so the cost of the unlocated nodes is visible (v0.6).
 - Hand-written betweenness corrected: it was exactly 2x too large, caught only by
   the networkx cross-check, ranks unaffected (v0.6).
+- Median legacy offset in §5.3 corrected from 0.76 km to 0.86 km, and the node
+  count from "40 of 47" to "44 of 51". The validator's display used the upper
+  middle value of an even-length list in place of a median; both the code and
+  this document are fixed (v1.0.0).
+- Licences set (CC BY 4.0 data, MIT code), `CITATION.cff` added, and
+  `00a_fetch_source.py` added so the source register is verified by checksum
+  rather than redistributed (v1.0.0).
