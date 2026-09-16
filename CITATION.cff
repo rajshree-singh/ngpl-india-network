@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this dataset or these scripts, please cite them as below."
+title: "ngpl-india-network: a provenance-separated reconstruction of India's authorised natural gas transmission network"
+abstract: >-
+  A machine-readable reconstruction of India's authorised natural gas
+  transmission network, built from the PNGRB Natural Gas Pipeline Networks
+  register of December 2025. Covers 99 authorised pipelines, of which 37
+  Common Carrier pipelines form the analytical scope and 27 admit a node-edge
+  representation. Every variable is labelled source-derived, GIS-derived or
+  analytically derived. Includes 215 automated validation checks and five
+  closure proofs against subtotals printed in the source.
+type: dataset
+version: 1.0.0
+date-released: "2026-09-16"
+license: CC-BY-4.0
+license-url: "https://creativecommons.org/licenses/by/4.0/"
+repository-code: "https://github.com/[YOUR-GITHUB-USERNAME]/ngpl-india-network"
+doi: "[ZENODO DOI — add after first release]"
+authors:
+  - family-names: "[FAMILY NAME]"
+    given-names: "[GIVEN NAMES]"
+    affiliation: "[AFFILIATION]"
+    orcid: "https://orcid.org/[YOUR ORCID]"
+keywords:
+  - critical infrastructure
+  - natural gas transmission
+  - pipeline network
+  - regulatory data
+  - data provenance
+  - reproducibility
+  - India
+references:
+  - type: report
+    title: "Natural Gas Pipeline Networks in India — December 2025"
+    authors:
+      - name: "Petroleum and Natural Gas Regulatory Board"
+    url: "https://www.pngrb.gov.in/data-bank/"
+    year: 2025
+    notes: "Primary source. Not redistributed in this repository."
+  - type: database
+    title: "GeoNames geographical database"
+    authors:
+      - name: "GeoNames"
+    url: "https://www.geonames.org/"
+    license: CC-BY-4.0
+    notes: "Node coordinates. Not redistributed; retrieved by scripts/00b_fetch_gazetteer.py."

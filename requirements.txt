@@ -1,0 +1,12 @@
+# Exact versions are not pinned because nothing here depends on recent
+# behaviour; any reasonably current release works. If you need to reproduce
+# byte-identically, the released package records the versions used.
+pandas>=1.5
+numpy>=1.23
+pypdf>=3.0          # 10_validate_master.py reads the source PDF
+openpyxl>=3.0       # 10_validate_master.py reads the independent transcription
+pyproj>=3.4         # geodesic lengths in 07_build_routes.py
+networkx>=2.8       # INDEPENDENT cross-check in 15_validate_vulnerability.py.
+                    # Without it that check is SKIPPED and the validator exits
+                    # non-zero. It is not optional.
+requests>=2.28      # 00a/00b fetch the source and the gazetteer
