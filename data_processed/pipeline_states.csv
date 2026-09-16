@@ -1,0 +1,158 @@
+pipeline_id,pipeline_name,pipeline_category,status,in_graph_scope,state_ut,states_covered_verbatim,state_source,normalisation_note,provenance_category
+17.01.NGPL,Assam Regional Network,Common Carrier,Operational,True,Assam,Assam,"PNGRB register, States Covered column",,A
+17.02.NGPL,Cauvery Basin Network,Common Carrier,Operational,True,Puducherry,Puducherry and Tamil Nadu,"PNGRB register, States Covered column",,A
+17.02.NGPL,Cauvery Basin Network,Common Carrier,Operational,True,Tamil Nadu,Puducherry and Tamil Nadu,"PNGRB register, States Covered column",,A
+17.03.NGPL,Hazira-Vijaipur-Jagdishpur -GREP (Gas Rehabilitation and Expansion Project)-Dahej-Vijaipur HVJ/VDPL,Common Carrier,Operational,True,Delhi,"Uttar Pradesh, Madhya Pradesh, Rajasthan and Gujarat, Haryana, Delhi, and Uttarakhand","PNGRB register, States Covered column",,A
+17.03.NGPL,Hazira-Vijaipur-Jagdishpur -GREP (Gas Rehabilitation and Expansion Project)-Dahej-Vijaipur HVJ/VDPL,Common Carrier,Operational,True,Gujarat,"Uttar Pradesh, Madhya Pradesh, Rajasthan and Gujarat, Haryana, Delhi, and Uttarakhand","PNGRB register, States Covered column",,A
+17.03.NGPL,Hazira-Vijaipur-Jagdishpur -GREP (Gas Rehabilitation and Expansion Project)-Dahej-Vijaipur HVJ/VDPL,Common Carrier,Operational,True,Haryana,"Uttar Pradesh, Madhya Pradesh, Rajasthan and Gujarat, Haryana, Delhi, and Uttarakhand","PNGRB register, States Covered column",,A
+17.03.NGPL,Hazira-Vijaipur-Jagdishpur -GREP (Gas Rehabilitation and Expansion Project)-Dahej-Vijaipur HVJ/VDPL,Common Carrier,Operational,True,Madhya Pradesh,"Uttar Pradesh, Madhya Pradesh, Rajasthan and Gujarat, Haryana, Delhi, and Uttarakhand","PNGRB register, States Covered column",,A
+17.03.NGPL,Hazira-Vijaipur-Jagdishpur -GREP (Gas Rehabilitation and Expansion Project)-Dahej-Vijaipur HVJ/VDPL,Common Carrier,Operational,True,Rajasthan,"Uttar Pradesh, Madhya Pradesh, Rajasthan and Gujarat, Haryana, Delhi, and Uttarakhand","PNGRB register, States Covered column",,A
+17.03.NGPL,Hazira-Vijaipur-Jagdishpur -GREP (Gas Rehabilitation and Expansion Project)-Dahej-Vijaipur HVJ/VDPL,Common Carrier,Operational,True,Uttar Pradesh,"Uttar Pradesh, Madhya Pradesh, Rajasthan and Gujarat, Haryana, Delhi, and Uttarakhand","PNGRB register, States Covered column",,A
+17.03.NGPL,Hazira-Vijaipur-Jagdishpur -GREP (Gas Rehabilitation and Expansion Project)-Dahej-Vijaipur HVJ/VDPL,Common Carrier,Operational,True,Uttarakhand,"Uttar Pradesh, Madhya Pradesh, Rajasthan and Gujarat, Haryana, Delhi, and Uttarakhand","PNGRB register, States Covered column",,A
+17.11.NGPL,Dahej-Vijaipur (DVPL)-Vijaipur-Dadri (GREP) Upgradation DVPL 2 & VDPL,Common Carrier,Operational,True,NOT_STATED,,"PNGRB register, States Covered column",register records no state for this row,A
+17.04.NGPL,Kakinada-Hyderabad-Uran-Ahmedabad (East West Pipeline),Common Carrier,Operational,True,Andhra Pradesh,"Andhra Pradesh, Gujarat, Maharashtra, Telangana and Karnataka","PNGRB register, States Covered column",,A
+17.04.NGPL,Kakinada-Hyderabad-Uran-Ahmedabad (East West Pipeline),Common Carrier,Operational,True,Gujarat,"Andhra Pradesh, Gujarat, Maharashtra, Telangana and Karnataka","PNGRB register, States Covered column",,A
+17.04.NGPL,Kakinada-Hyderabad-Uran-Ahmedabad (East West Pipeline),Common Carrier,Operational,True,Karnataka,"Andhra Pradesh, Gujarat, Maharashtra, Telangana and Karnataka","PNGRB register, States Covered column",,A
+17.04.NGPL,Kakinada-Hyderabad-Uran-Ahmedabad (East West Pipeline),Common Carrier,Operational,True,Maharashtra,"Andhra Pradesh, Gujarat, Maharashtra, Telangana and Karnataka","PNGRB register, States Covered column",,A
+17.04.NGPL,Kakinada-Hyderabad-Uran-Ahmedabad (East West Pipeline),Common Carrier,Operational,True,Telangana,"Andhra Pradesh, Gujarat, Maharashtra, Telangana and Karnataka","PNGRB register, States Covered column",,A
+17.05.NGPL,Dahej-Uran-Panvel-Dabhol,Common Carrier,Operational,True,Dadra and Nagar Haveli and Daman and Diu,"Gujarat, Maharashtra, UT of Dadra & Nagar Haveli and Daman & Diu","PNGRB register, States Covered column","canonical form; register prints it differently in the verbatim cell (abbreviation, '&', 'UT of', or an older name)",A
+17.05.NGPL,Dahej-Uran-Panvel-Dabhol,Common Carrier,Operational,True,Gujarat,"Gujarat, Maharashtra, UT of Dadra & Nagar Haveli and Daman & Diu","PNGRB register, States Covered column",,A
+17.05.NGPL,Dahej-Uran-Panvel-Dabhol,Common Carrier,Operational,True,Maharashtra,"Gujarat, Maharashtra, UT of Dadra & Nagar Haveli and Daman & Diu","PNGRB register, States Covered column",,A
+17.06.NGPL,KG Basin Network,Common Carrier,Operational,True,Andhra Pradesh,Andhra Pradesh,"PNGRB register, States Covered column",,A
+17.07.NGPL,Gujarat Regional Network,Common Carrier,Operational,True,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+17.08.NGPL,Agartala Regional Network,Common Carrier,Operational,True,Tripura,Tripura,"PNGRB register, States Covered column",,A
+17.10.NGPL,Dadri-Panipat,Common Carrier,Operational,True,Haryana,Haryana and Uttar Pradesh,"PNGRB register, States Covered column",,A
+17.10.NGPL,Dadri-Panipat,Common Carrier,Operational,True,Uttar Pradesh,Haryana and Uttar Pradesh,"PNGRB register, States Covered column",,A
+17.13.NGPL,Mumbai Regional Network,Common Carrier,Operational,True,Maharashtra,Maharashtra,"PNGRB register, States Covered column",,A
+17.14.NGPL,Uran-Trombay,Common Carrier,Operational,True,Maharashtra,Maharashtra,"PNGRB register, States Covered column",,A
+18.01.NGPL,High Pressure Gujarat Gas Grid,Common Carrier,Operational,True,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+18.02.NGPL,Hazira-Ankleshwar (HAPi),Common Carrier,Operational,True,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+18.03.NGPL,Low Pressure Gujarat Gas Grid,Common Carrier,Operational,True,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+5.05.NGPL,Shahdol-Phulpur,Common Carrier,Operational,True,Madhya Pradesh,Madhya Pradesh and Uttar Pradesh,"PNGRB register, States Covered column",,A
+5.05.NGPL,Shahdol-Phulpur,Common Carrier,Operational,True,Uttar Pradesh,Madhya Pradesh and Uttar Pradesh,"PNGRB register, States Covered column",,A
+17.17.NGPL,Assam Regional Network,Common Carrier,Operational,True,Assam,Assam,"PNGRB register, States Covered column",,A
+17.18.NGPL,Dukli - Maharajganj,Common Carrier,Operational,True,Tripura,Agartala,"PNGRB register, States Covered column","canonical form; register prints it differently in the verbatim cell (abbreviation, '&', 'UT of', or an older name)",A
+17.19.NGPL,Uran-Taloja,Common Carrier,Operational,True,Maharashtra,Maharashtra,"PNGRB register, States Covered column",,A
+17.09.NGPL,Chainsa-Jhajjar-Hissar,Common Carrier,Operational,True,Delhi,"Haryana, Rajasthan and Delhi","PNGRB register, States Covered column",,A
+17.09.NGPL,Chainsa-Jhajjar-Hissar,Common Carrier,Operational,True,Haryana,"Haryana, Rajasthan and Delhi","PNGRB register, States Covered column",,A
+17.09.NGPL,Chainsa-Jhajjar-Hissar,Common Carrier,Operational,True,Rajasthan,"Haryana, Rajasthan and Delhi","PNGRB register, States Covered column",,A
+17.12.NGPL,Dadri-Bawana-Nangal,Common Carrier,Operational,True,Delhi,"Punjab, Haryana, Uttar Pradesh, Uttarakhand, Delhi, and Himachal Pradesh","PNGRB register, States Covered column",,A
+17.12.NGPL,Dadri-Bawana-Nangal,Common Carrier,Operational,True,Haryana,"Punjab, Haryana, Uttar Pradesh, Uttarakhand, Delhi, and Himachal Pradesh","PNGRB register, States Covered column",,A
+17.12.NGPL,Dadri-Bawana-Nangal,Common Carrier,Operational,True,Himachal Pradesh,"Punjab, Haryana, Uttar Pradesh, Uttarakhand, Delhi, and Himachal Pradesh","PNGRB register, States Covered column",,A
+17.12.NGPL,Dadri-Bawana-Nangal,Common Carrier,Operational,True,Punjab,"Punjab, Haryana, Uttar Pradesh, Uttarakhand, Delhi, and Himachal Pradesh","PNGRB register, States Covered column",,A
+17.12.NGPL,Dadri-Bawana-Nangal,Common Carrier,Operational,True,Uttar Pradesh,"Punjab, Haryana, Uttar Pradesh, Uttarakhand, Delhi, and Himachal Pradesh","PNGRB register, States Covered column",,A
+17.12.NGPL,Dadri-Bawana-Nangal,Common Carrier,Operational,True,Uttarakhand,"Punjab, Haryana, Uttar Pradesh, Uttarakhand, Delhi, and Himachal Pradesh","PNGRB register, States Covered column",,A
+21.01.NGPL,Jaigarh - Dabhol,Tie-in,Operational,False,Maharashtra,Maharashtra,"PNGRB register, States Covered column",,A
+21.03.NGPL,"ONGCs WHI North Penugonda to GAH, Peravali SV station",Tie-in,Operational,False,Andhra Pradesh,Andhra Pradesh,"PNGRB register, States Covered column",,A
+21.06.NGPL,ONGC's Madnam field to GAIL's Cauvery Basin Network at SV-2 (Memathur),Tie-in,Operational,False,Andhra Pradesh,Andhra Pradesh,"PNGRB register, States Covered column",,A
+21.07.NGPL,"ONGC's S1-VA fields ex-Odalarevu to GAIL's KG Basin Network at SV-1, Bodaskurru",Tie-in,Operational,False,Andhra Pradesh,Andhra Pradesh,"PNGRB register, States Covered column",,A
+21.04.NGPL,Suvali to HVJ/DVPL Network,Tie-in,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+21.05.NGPL,ONGC's Bantumilli gas source field to GAIL's KG Basin Network,Tie-in,Operational,False,Andhra Pradesh,Andhra Pradesh,"PNGRB register, States Covered column",,A
+21.19.NGPL,"Vedanta Limited's Jaya Fields at Jambusar, Gujarat to South Gujarat Main subnetwork of GAIL's Gujarat Regional Network",Tie-in,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+21.15.NGPL,ONGC's Bokaro CBM Block to SV-01A on Bokaro-Dhamra Section of JHBDPL,Tie-in,Operational,False,Jharkhand,Jharkhand,"PNGRB register, States Covered column",,A
+21.11.NGPL,HSEPL LNG Terminal at Chhara to GSPL's dispatch terminal at Londhpur,Tie-in,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.01.NGPL,Duliajan to Numaligarh,Dedicated,Operational,False,Assam,Assam,"PNGRB register, States Covered column",,A
+19.02.NGPL,Essar's LP gas gathering header to Phillips Carbon Black Ltd. Durgapur,Dedicated,Operational,False,West Bengal,West Bengal,"PNGRB register, States Covered column",,A
+19.03.NGPL,Essar's LP Gas Gathering Header to Graphite India Ltd in Durgapur,Dedicated,Operational,False,West Bengal,West Bengal,"PNGRB register, States Covered column",,A
+19.04.NGPL,"PLL Dahej Terminal to DGEN Power Plant, Dahej SEZ",Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.05.NGPL,EPS Akoljoni - Sapna Chemical (No Offtake),Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.06.NGPL,EPS Nanda - Supreme Glass,Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.07.NGPL,Dahej GGS to GACL P/L,Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.08.NGPL,GGS Olpad to CYA. & CHEM.,Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.09.NGPL,Jolwa EPS to Nahar P/L,Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.10.NGPL,Jolwa EPS to GACL (MDPE),Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.11.NGPL,Kim EPS to Spire cera P/L (MDPE),Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.12.NGPL,EPS Wasana - Universal Metal (Manglam Alloys),Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.13.NGPL,Motera GGS - RIL Sughad,Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.14.NGPL,Kalol collector line T/O - BVM,Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.15.NGPL,EPS Nandasan - Nirma,Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.16.NGPL,EPS Nandasan - Sterling (N),Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.17.NGPL,EPS Nandasan - Sterling (K),Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.18.NGPL,EPS Wadu - Pioneer,Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.19.NGPL,Sanand GGS - Jalaram,Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.20.NGPL,Limbodara EPS - Akash,Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.21.NGPL,Nandasan EPS - Akik Tiles,Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.22.NGPL,Nallur - TNEB Thirumakkottai,Dedicated,Operational,False,Tamil Nadu,Tamil Nadu,"PNGRB register, States Covered column",,A
+19.23.NGPL,Nallur - Prem Chemco,Dedicated,Operational,False,Tamil Nadu,Tamil Nadu,"PNGRB register, States Covered column",,A
+19.24.NGPL,BVG-Neycer,Dedicated,Operational,False,Tamil Nadu,Tamil Nadu,"PNGRB register, States Covered column",,A
+19.25.NGPL,AFL,Dedicated,Operational,False,Andhra Pradesh,Andhra Pradesh,"PNGRB register, States Covered column",,A
+19.26.NGPL,Hitech,Dedicated,Operational,False,Andhra Pradesh,Andhra Pradesh,"PNGRB register, States Covered column",,A
+19.27.NGPL,Steel Exchange,Dedicated,Operational,False,Andhra Pradesh,Andhra Pradesh,"PNGRB register, States Covered column",,A
+19.28.NGPL,Dandewala - Gamnewala-RSEB Ramgarh,Dedicated,Operational,False,Rajasthan,Rajasthan,"PNGRB register, States Covered column",,A
+19.29.NGPL,Langtala to Ramgarh,Dedicated,Operational,False,Rajasthan,Rajasthan,"PNGRB register, States Covered column",,A
+19.31.NGPL,ONGC Kavitam to GAIL Kavitam SV Station,Dedicated,Operational,False,Andhra Pradesh,Andhra Pradesh,"PNGRB register, States Covered column",,A
+19.32.NGPL,"ONGC Kammapalem isolated well to GAIL SV terminal, Dindi in East Godavari",Dedicated,Operational,False,Andhra Pradesh,Andhra Pradesh,"PNGRB register, States Covered column",,A
+19.33.NGPL,ONGC's CTF Ankleshwar isolated well to GAIL's Common Carrier South Gujarat Network interconnection point,Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.34.NGPL,Bhadol Top to Torrent Hazira Akhakol,Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.44.NGPL,LANCO Kondapalli Pipeline-I,Dedicated,Operational,False,Andhra Pradesh,Andhra Pradesh,"PNGRB register, States Covered column",,A
+19.36.NGPL,Sonamura GCS to GMS-Monarchak,Dedicated,Operational,False,Tripura,Tripura,"PNGRB register, States Covered column",,A
+19.35.NGPL,ADB GCS to ONGC Colony Badarghat,Dedicated,Operational,False,Tripura,Tripura,"PNGRB register, States Covered column",,A
+19.37.NGPL,ONGC Hazira-KRIBHCO HP Pipeline,Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.38.NGPL,ONGC Hazira-KRIBHCO LP Pipeline,Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.39.NGPL,Essar's Main Compressor Station in Raniganj (East) CBM Block to Matix Fertilizer and Chemicals Ltd (MFCL) in Durgapur,Dedicated,Operational,False,West Bengal,West Bengal,"PNGRB register, States Covered column",,A
+19.43.NGPL,ONGC Poondi Fields to Maharaj Soaps Industry Private Limited,Dedicated,Operational,False,Tamil Nadu,Tamil Nadu,"PNGRB register, States Covered column",,A
+19.41.NGPL,PLL's Dahej - Koyali Refinery Natural Gas Pipeline (DKPL),Dedicated,Operational,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+5.01.NGPL,Mehsana-Bhatinda,Common Carrier,Under Construction,True,Gujarat,"Gujarat, Rajasthan, Haryana, Punjab","PNGRB register, States Covered column",,A
+5.01.NGPL,Mehsana-Bhatinda,Common Carrier,Under Construction,True,Haryana,"Gujarat, Rajasthan, Haryana, Punjab","PNGRB register, States Covered column",,A
+5.01.NGPL,Mehsana-Bhatinda,Common Carrier,Under Construction,True,Punjab,"Gujarat, Rajasthan, Haryana, Punjab","PNGRB register, States Covered column",,A
+5.01.NGPL,Mehsana-Bhatinda,Common Carrier,Under Construction,True,Rajasthan,"Gujarat, Rajasthan, Haryana, Punjab","PNGRB register, States Covered column",,A
+5.02.NGPL,Bhatinda-Gurdaspur,Common Carrier,Under Construction,True,Punjab,Punjab,"PNGRB register, States Covered column",,A
+5.03.NGPL,Mallavaram-Bhopal-Bhilwara-Vijaipur,Common Carrier,Under Construction,True,Andhra Pradesh,"Andhra Pradesh, Telangana, Maharashtra, MP, Rajasthan, Gujarat","PNGRB register, States Covered column",,A
+5.03.NGPL,Mallavaram-Bhopal-Bhilwara-Vijaipur,Common Carrier,Under Construction,True,Gujarat,"Andhra Pradesh, Telangana, Maharashtra, MP, Rajasthan, Gujarat","PNGRB register, States Covered column",,A
+5.03.NGPL,Mallavaram-Bhopal-Bhilwara-Vijaipur,Common Carrier,Under Construction,True,Madhya Pradesh,"Andhra Pradesh, Telangana, Maharashtra, MP, Rajasthan, Gujarat","PNGRB register, States Covered column","canonical form; register prints it differently in the verbatim cell (abbreviation, '&', 'UT of', or an older name)",A
+5.03.NGPL,Mallavaram-Bhopal-Bhilwara-Vijaipur,Common Carrier,Under Construction,True,Maharashtra,"Andhra Pradesh, Telangana, Maharashtra, MP, Rajasthan, Gujarat","PNGRB register, States Covered column",,A
+5.03.NGPL,Mallavaram-Bhopal-Bhilwara-Vijaipur,Common Carrier,Under Construction,True,Rajasthan,"Andhra Pradesh, Telangana, Maharashtra, MP, Rajasthan, Gujarat","PNGRB register, States Covered column",,A
+5.03.NGPL,Mallavaram-Bhopal-Bhilwara-Vijaipur,Common Carrier,Under Construction,True,Telangana,"Andhra Pradesh, Telangana, Maharashtra, MP, Rajasthan, Gujarat","PNGRB register, States Covered column",,A
+17.16.NGPL,Dabhol-Bangalore,Common Carrier,Under Construction,True,Goa,"Maharashtra, Karnataka, Goa","PNGRB register, States Covered column",,A
+17.16.NGPL,Dabhol-Bangalore,Common Carrier,Under Construction,True,Karnataka,"Maharashtra, Karnataka, Goa","PNGRB register, States Covered column",,A
+17.16.NGPL,Dabhol-Bangalore,Common Carrier,Under Construction,True,Maharashtra,"Maharashtra, Karnataka, Goa","PNGRB register, States Covered column",,A
+17.15.NGPL,Kochi-Koottanad-Bangalore-Mangalore,Common Carrier,Under Construction,True,Karnataka,"Kerala, Tamil Nadu, Karnataka, UT of Puducherry","PNGRB register, States Covered column",,A
+17.15.NGPL,Kochi-Koottanad-Bangalore-Mangalore,Common Carrier,Under Construction,True,Kerala,"Kerala, Tamil Nadu, Karnataka, UT of Puducherry","PNGRB register, States Covered column",,A
+17.15.NGPL,Kochi-Koottanad-Bangalore-Mangalore,Common Carrier,Under Construction,True,Puducherry,"Kerala, Tamil Nadu, Karnataka, UT of Puducherry","PNGRB register, States Covered column",,A
+17.15.NGPL,Kochi-Koottanad-Bangalore-Mangalore,Common Carrier,Under Construction,True,Tamil Nadu,"Kerala, Tamil Nadu, Karnataka, UT of Puducherry","PNGRB register, States Covered column",,A
+5.08.NGPL,Ennore-Tuticorin,Common Carrier,Under Construction,True,Andhra Pradesh,"Tamil Nadu, Karnataka, Andhra Pradesh, UT of Puducherry","PNGRB register, States Covered column",,A
+5.08.NGPL,Ennore-Tuticorin,Common Carrier,Under Construction,True,Karnataka,"Tamil Nadu, Karnataka, Andhra Pradesh, UT of Puducherry","PNGRB register, States Covered column",,A
+5.08.NGPL,Ennore-Tuticorin,Common Carrier,Under Construction,True,Puducherry,"Tamil Nadu, Karnataka, Andhra Pradesh, UT of Puducherry","PNGRB register, States Covered column",,A
+5.08.NGPL,Ennore-Tuticorin,Common Carrier,Under Construction,True,Tamil Nadu,"Tamil Nadu, Karnataka, Andhra Pradesh, UT of Puducherry","PNGRB register, States Covered column",,A
+17.20.NGPL,Jagdishpur-Haldia-Bokaro Dhamra-Paradip-Barauni-Guwahati,Common Carrier,Under Construction,True,Assam,"Uttar Pradesh, Bihar, Jharkhand, West Bengal, Odisha, Assam","PNGRB register, States Covered column",,A
+17.20.NGPL,Jagdishpur-Haldia-Bokaro Dhamra-Paradip-Barauni-Guwahati,Common Carrier,Under Construction,True,Bihar,"Uttar Pradesh, Bihar, Jharkhand, West Bengal, Odisha, Assam","PNGRB register, States Covered column",,A
+17.20.NGPL,Jagdishpur-Haldia-Bokaro Dhamra-Paradip-Barauni-Guwahati,Common Carrier,Under Construction,True,Jharkhand,"Uttar Pradesh, Bihar, Jharkhand, West Bengal, Odisha, Assam","PNGRB register, States Covered column",,A
+17.20.NGPL,Jagdishpur-Haldia-Bokaro Dhamra-Paradip-Barauni-Guwahati,Common Carrier,Under Construction,True,Odisha,"Uttar Pradesh, Bihar, Jharkhand, West Bengal, Odisha, Assam","PNGRB register, States Covered column",,A
+17.20.NGPL,Jagdishpur-Haldia-Bokaro Dhamra-Paradip-Barauni-Guwahati,Common Carrier,Under Construction,True,Uttar Pradesh,"Uttar Pradesh, Bihar, Jharkhand, West Bengal, Odisha, Assam","PNGRB register, States Covered column",,A
+17.20.NGPL,Jagdishpur-Haldia-Bokaro Dhamra-Paradip-Barauni-Guwahati,Common Carrier,Under Construction,True,West Bengal,"Uttar Pradesh, Bihar, Jharkhand, West Bengal, Odisha, Assam","PNGRB register, States Covered column",,A
+42.01.NGPL,North-East Natural Gas Pipeline Grid,Common Carrier,Under Construction,True,Arunachal Pradesh,"Assam, Mizoram, Manipur, Arunachal Pradesh, Tripura, Nagaland, Meghalaya & Sikkim, West Bengal","PNGRB register, States Covered column",,A
+42.01.NGPL,North-East Natural Gas Pipeline Grid,Common Carrier,Under Construction,True,Assam,"Assam, Mizoram, Manipur, Arunachal Pradesh, Tripura, Nagaland, Meghalaya & Sikkim, West Bengal","PNGRB register, States Covered column",,A
+42.01.NGPL,North-East Natural Gas Pipeline Grid,Common Carrier,Under Construction,True,Manipur,"Assam, Mizoram, Manipur, Arunachal Pradesh, Tripura, Nagaland, Meghalaya & Sikkim, West Bengal","PNGRB register, States Covered column",,A
+42.01.NGPL,North-East Natural Gas Pipeline Grid,Common Carrier,Under Construction,True,Meghalaya,"Assam, Mizoram, Manipur, Arunachal Pradesh, Tripura, Nagaland, Meghalaya & Sikkim, West Bengal","PNGRB register, States Covered column",,A
+42.01.NGPL,North-East Natural Gas Pipeline Grid,Common Carrier,Under Construction,True,Mizoram,"Assam, Mizoram, Manipur, Arunachal Pradesh, Tripura, Nagaland, Meghalaya & Sikkim, West Bengal","PNGRB register, States Covered column",,A
+42.01.NGPL,North-East Natural Gas Pipeline Grid,Common Carrier,Under Construction,True,Nagaland,"Assam, Mizoram, Manipur, Arunachal Pradesh, Tripura, Nagaland, Meghalaya & Sikkim, West Bengal","PNGRB register, States Covered column",,A
+42.01.NGPL,North-East Natural Gas Pipeline Grid,Common Carrier,Under Construction,True,Sikkim,"Assam, Mizoram, Manipur, Arunachal Pradesh, Tripura, Nagaland, Meghalaya & Sikkim, West Bengal","PNGRB register, States Covered column",,A
+42.01.NGPL,North-East Natural Gas Pipeline Grid,Common Carrier,Under Construction,True,Tripura,"Assam, Mizoram, Manipur, Arunachal Pradesh, Tripura, Nagaland, Meghalaya & Sikkim, West Bengal","PNGRB register, States Covered column",,A
+42.01.NGPL,North-East Natural Gas Pipeline Grid,Common Carrier,Under Construction,True,West Bengal,"Assam, Mizoram, Manipur, Arunachal Pradesh, Tripura, Nagaland, Meghalaya & Sikkim, West Bengal","PNGRB register, States Covered column",,A
+5.13.NGPL,Mumbai-Nagpur-Jharsuguda,Common Carrier,Under Construction,True,Chhattisgarh,"Maharashtra, Madhya Pradesh, Chhattisgarh and Odisha","PNGRB register, States Covered column",,A
+5.13.NGPL,Mumbai-Nagpur-Jharsuguda,Common Carrier,Under Construction,True,Madhya Pradesh,"Maharashtra, Madhya Pradesh, Chhattisgarh and Odisha","PNGRB register, States Covered column",,A
+5.13.NGPL,Mumbai-Nagpur-Jharsuguda,Common Carrier,Under Construction,True,Maharashtra,"Maharashtra, Madhya Pradesh, Chhattisgarh and Odisha","PNGRB register, States Covered column",,A
+5.13.NGPL,Mumbai-Nagpur-Jharsuguda,Common Carrier,Under Construction,True,Odisha,"Maharashtra, Madhya Pradesh, Chhattisgarh and Odisha","PNGRB register, States Covered column",,A
+5.12.NGPL,Srikakulam-Angul,Common Carrier,Under Construction,True,Andhra Pradesh,"Andhra Pradesh, Odisha","PNGRB register, States Covered column",,A
+5.12.NGPL,Srikakulam-Angul,Common Carrier,Under Construction,True,Odisha,"Andhra Pradesh, Odisha","PNGRB register, States Covered column",,A
+5.07.NGPL,Ennore - Nellore,Common Carrier,Under Construction,True,Andhra Pradesh,"Andhra Pradesh, Tamil Nadu","PNGRB register, States Covered column",,A
+5.07.NGPL,Ennore - Nellore,Common Carrier,Under Construction,True,Tamil Nadu,"Andhra Pradesh, Tamil Nadu","PNGRB register, States Covered column",,A
+5.10.NGPL,Kakinada-Vijayawada-Nellore,Common Carrier,Under Construction,True,Andhra Pradesh,Andhra Pradesh,"PNGRB register, States Covered column",,A
+5.11.NGPL,Kanai - Chhata - Panitar,Common Carrier,Under Construction,True,West Bengal,West Bengal,"PNGRB register, States Covered column",,A
+21.17.NGPL,Jamnagar to Dwarka (Gujarat),Common Carrier,Under Construction,True,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+5.14.NGPL,Hazaribagh-Ranchi,Common Carrier,Under Construction,True,Jharkhand,Jharkhand,"PNGRB register, States Covered column",,A
+5.15.NGPL,Gurdaspur-Jammu,Common Carrier,Under Construction,True,Jammu and Kashmir,"UT of Jammu & Kashmir, Punjab","PNGRB register, States Covered column","canonical form; register prints it differently in the verbatim cell (abbreviation, '&', 'UT of', or an older name)",A
+5.15.NGPL,Gurdaspur-Jammu,Common Carrier,Under Construction,True,Punjab,"UT of Jammu & Kashmir, Punjab","PNGRB register, States Covered column",,A
+21.09.NGPL,"ONGC's Odelarevu terminal, Mallavaram connecting KVNPL",Tie-in,Under Construction,False,Andhra Pradesh,Andhra Pradesh,"PNGRB register, States Covered column",,A
+21.10.NGPL,"GSPL's proposed Terminal at Petronet LNG Limited re-gasification expansion facilities, Dahej to GSPL's existing Terminal at Bhadbhut",Tie-in,Under Construction,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+21.12.NGPL,Proposed LNG Terminal at Karaikal Port to Chemplast/PPCL on existing Narimanam-Kuthalam Natural Gas Pipeline Sub-Network of GAIL's Cauvery Basin Network,Tie-in,Under Construction,False,Puducherry,Tamil Nadu and UT of Puducherry,"PNGRB register, States Covered column",,A
+21.12.NGPL,Proposed LNG Terminal at Karaikal Port to Chemplast/PPCL on existing Narimanam-Kuthalam Natural Gas Pipeline Sub-Network of GAIL's Cauvery Basin Network,Tie-in,Under Construction,False,Tamil Nadu,Tamil Nadu and UT of Puducherry,"PNGRB register, States Covered column",,A
+21.14.NGPL,ONGC's Jharia CBM Block to SV-28 on Dobhi-Durgapur Section of JHBDPL,Tie-in,Under Construction,False,Jharkhand,Jharkhand,"PNGRB register, States Covered column",,A
+21.16.NGPL,"Swan LNG Private Limited's FSRU based LNG Terminal at Jafrabad to GPPC Terminal, Jafrabad falling on Darod-Jafrabad section of GSPL's HPGGG",Tie-in,Under Construction,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+21.22.NGPL,Swan LNG Private Limited's RLNG Terminal at Jafrabad to Hadala falling on Gana-Hadala section of GSPL's HPGGG,Tie-in,Under Construction,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+21.18.NGPL,Swan LNG Private Limited's RLNG Terminal at Jafrabad to GAIL's terminal at Dahej connecting to its integrated HVJ,Tie-in,Under Construction,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+21.20.NGPL,EPS 1 of Jharia Block I to SV-28 on Dobhi-Durgapur Section of JHBDPL,Tie-in,Under Construction,False,Jharkhand,Jharkhand,"PNGRB register, States Covered column",,A
+21.21.NGPL,ONGC's Raniganj CBM Block to GAIL's JHBDPL Network,Tie-in,Under Construction,False,West Bengal,West Bengal,"PNGRB register, States Covered column",,A
+19.30.NGPL,INOLE to Pashamylaram,Dedicated,Under Construction,False,Telangana,Telangana,"PNGRB register, States Covered column",,A
+19.40.NGPL,"PLL Re-gasification Terminal, Dahej to SUGEN Power Plant",Dedicated,Under Construction,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A
+19.42.NGPL,"PLL to OPaL, Dahej",Dedicated,Under Construction,False,Gujarat,Gujarat,"PNGRB register, States Covered column",,A

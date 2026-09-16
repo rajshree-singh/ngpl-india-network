@@ -1,0 +1,38 @@
+pipeline_id,pipeline_name,topology_class,n_waypoints_stated,in_graph_v1,waypoint_sequence,waypoint_source,topology_note
+17.01.NGPL,Assam Regional Network,areal,0,False,,,"Assam Regional Network -- service area, no route stated"
+17.02.NGPL,Cauvery Basin Network,areal,0,False,,,"Cauvery Basin Network -- basin network, no route stated"
+17.03.NGPL,Hazira-Vijaipur-Jagdishpur -GREP (Gas Rehabilitation and Expansion Project)-Dahej-Vijaipur HVJ/VDPL,linear,4,True,Hazira -> Vijaipur -> Jagdishpur -> Dahej,pipeline_name (PNGRB register),Name is a merged authorization covering HVJ + GREP + DVPL/VDPL. Waypoints taken in the order printed; 'Vijaipur' appears twice in the name and is kept once. Sequence is NOT a simple path -- see topology_note.
+17.11.NGPL,Dahej-Vijaipur (DVPL)-Vijaipur-Dadri (GREP) Upgradation DVPL 2 & VDPL,linear,3,True,Dahej -> Vijaipur -> Dadri,pipeline_name (PNGRB register),"Name states two segments (Dahej-Vijaipur, Vijaipur-Dadri). Shares its length/capacity cell with 17.03."
+17.04.NGPL,Kakinada-Hyderabad-Uran-Ahmedabad (East West Pipeline),linear,4,True,Kakinada -> Hyderabad -> Uran -> Ahmedabad,pipeline_name (PNGRB register),
+17.05.NGPL,Dahej-Uran-Panvel-Dabhol,linear,4,True,Dahej -> Uran -> Panvel -> Dabhol,pipeline_name (PNGRB register),
+17.06.NGPL,KG Basin Network,areal,0,False,,,"KG Basin Network -- basin network, no route stated"
+17.07.NGPL,Gujarat Regional Network,areal,0,False,,,"Gujarat Regional Network -- service area, no route stated"
+17.08.NGPL,Agartala Regional Network,areal,0,False,,,"Agartala Regional Network -- service area, no route stated"
+17.10.NGPL,Dadri-Panipat,linear,2,True,Dadri -> Panipat,pipeline_name (PNGRB register),
+17.13.NGPL,Mumbai Regional Network,areal,0,False,,,"Mumbai Regional Network -- service area, no route stated"
+17.14.NGPL,Uran-Trombay,linear,2,True,Uran -> Trombay,pipeline_name (PNGRB register),
+18.01.NGPL,High Pressure Gujarat Gas Grid,areal,0,False,,,"High Pressure Gujarat Gas Grid -- state-wide grid, no route stated"
+18.02.NGPL,Hazira-Ankleshwar (HAPi),linear,2,True,Hazira -> Ankleshwar,pipeline_name (PNGRB register),"'(HAPi)' is the pipeline's acronym, not a waypoint; dropped."
+18.03.NGPL,Low Pressure Gujarat Gas Grid,areal,0,False,,,"Low Pressure Gujarat Gas Grid -- state-wide grid, no route stated"
+5.05.NGPL,Shahdol-Phulpur,linear,2,True,Shahdol -> Phulpur,pipeline_name (PNGRB register),
+17.17.NGPL,Assam Regional Network,areal,0,False,,,"Assam Regional Network (AGCL) -- service area, no route stated"
+17.18.NGPL,Dukli - Maharajganj,linear,2,True,Dukli -> Maharajganj,pipeline_name (PNGRB register),
+17.19.NGPL,Uran-Taloja,linear,2,True,Uran -> Taloja,pipeline_name (PNGRB register),
+17.09.NGPL,Chainsa-Jhajjar-Hissar,linear,3,True,Chainsa -> Jhajjar -> Hissar,pipeline_name (PNGRB register),"Register spells it 'Hissar'; the same place is 'Hisar' elsewhere. Spelling kept verbatim, alias recorded in STEP 2b."
+17.12.NGPL,Dadri-Bawana-Nangal,linear,3,True,Dadri -> Bawana -> Nangal,pipeline_name (PNGRB register),
+5.01.NGPL,Mehsana-Bhatinda,linear,2,True,Mehsana -> Bhatinda,pipeline_name (PNGRB register),
+5.02.NGPL,Bhatinda-Gurdaspur,linear,2,True,Bhatinda -> Gurdaspur,pipeline_name (PNGRB register),
+5.03.NGPL,Mallavaram-Bhopal-Bhilwara-Vijaipur,linear,4,True,Mallavaram -> Bhopal -> Bhilwara -> Vijaipur,pipeline_name (PNGRB register),
+17.16.NGPL,Dabhol-Bangalore,linear,2,True,Dabhol -> Bangalore,pipeline_name (PNGRB register),
+17.15.NGPL,Kochi-Koottanad-Bangalore-Mangalore,linear,4,True,Kochi -> Koottanad -> Bangalore -> Mangalore,pipeline_name (PNGRB register),
+5.08.NGPL,Ennore-Tuticorin,linear,2,True,Ennore -> Tuticorin,pipeline_name (PNGRB register),
+17.20.NGPL,Jagdishpur-Haldia-Bokaro Dhamra-Paradip-Barauni-Guwahati,linear,7,True,Jagdishpur -> Haldia -> Bokaro -> Dhamra -> Paradip -> Barauni -> Guwahati,pipeline_name (PNGRB register),"The PDF prints 'Bokaro Dhamra' with no separator between two distinct places; read as Bokaro and Dhamra. Known branching line -- order here is the printed order, not a single path."
+42.01.NGPL,North-East Natural Gas Pipeline Grid,areal,0,False,,,"North-East Natural Gas Pipeline Grid -- multi-state grid, no route stated"
+5.13.NGPL,Mumbai-Nagpur-Jharsuguda,linear,3,True,Mumbai -> Nagpur -> Jharsuguda,pipeline_name (PNGRB register),
+5.12.NGPL,Srikakulam-Angul,linear,2,True,Srikakulam -> Angul,pipeline_name (PNGRB register),
+5.07.NGPL,Ennore - Nellore,linear,2,True,Ennore -> Nellore,pipeline_name (PNGRB register),
+5.10.NGPL,Kakinada-Vijayawada-Nellore,linear,3,True,Kakinada -> Vijayawada -> Nellore,pipeline_name (PNGRB register),
+5.11.NGPL,Kanai - Chhata - Panitar,linear,2,True,Kanai Chhata -> Panitar,pipeline_name (PNGRB register),"RESOLVED 2026-09-04. The register prints 'Kanai - Chhata - Panitar', which reads as three waypoints; it is two. 'Kanai Chhata' is a single locality near Contai, Purba Medinipur district, West Bengal. Source: Global Energy Monitor, Kanai Chhata-Shrirampur Gas Pipeline, https://www.gem.wiki/Kanai_Chhata-Shrirampur_Gas_Pipeline -- gives the route as 'from Kanai Chhata near Contai, West Bengal to Panitar, West Bengal' at 317 km, matching the register's 317 km, and records that PNGRB amended the termination point from Shrirampur to Panitar in 2022. The register cannot settle this reading on its own; provenance for the SPLIT is therefore external and cited, while both place names remain source-derived."
+21.17.NGPL,Jamnagar to Dwarka (Gujarat),linear,2,True,Jamnagar -> Dwarka,pipeline_name (PNGRB register),"'(Gujarat)' is a state qualifier in the name, not a waypoint; dropped."
+5.14.NGPL,Hazaribagh-Ranchi,linear,2,True,Hazaribagh -> Ranchi,pipeline_name (PNGRB register),
+5.15.NGPL,Gurdaspur-Jammu,linear,2,True,Gurdaspur -> Jammu,pipeline_name (PNGRB register),

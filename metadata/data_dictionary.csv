@@ -1,0 +1,210 @@
+file,column,provenance_category,unit,description
+pipeline_master.csv,pipeline_id,A,text,"PL Unique ID exactly as printed in the register, e.g. 17.03.NGPL. Primary key."
+pipeline_master.csv,pipeline_name,A,text,Pipeline name verbatim. For Common Carrier pipelines this is also the ONLY source of route points (README s4).
+pipeline_master.csv,pipeline_category,A,text,"Common Carrier / Tie-in / Dedicated, from which register table the row came."
+pipeline_master.csv,status,A,text,"Operational / Under Construction, from the register table."
+pipeline_master.csv,authorization_regulation,A,text,Regulation under which authorized; Section 42 rows noted.
+pipeline_master.csv,operator_code,A,text,Short operator code. Glossary in 01_build_pipeline_master.py.
+pipeline_master.csv,operator_name,A,text,Authorized entity verbatim. Two rows inherit a merged PDF cell; see notes.
+pipeline_master.csv,authorization_date,A,date,Date of authorization as printed. NA where the register leaves it blank.
+pipeline_master.csv,authorized_length_km,A,km,Authorized length. Sums reproduce the register's page-1 subtotals.
+pipeline_master.csv,operating_length_km,A,km,"Operating length. 17.18 is a genuine measured 0, annotated in notes; not a missing value."
+pipeline_master.csv,under_construction_km,A,km,"Under-construction length, carried separately and never merged into the others."
+pipeline_master.csv,capacity_mmscmd,A,MMSCMD,"Design capacity, parsed. NA where the register gives no single number."
+pipeline_master.csv,capacity_verbatim,A,text,"Capacity cell exactly as printed, retained because several are ranges or footnoted."
+pipeline_master.csv,target_completion,A,text,"Target completion for under-construction rows, verbatim."
+pipeline_master.csv,states_covered_verbatim,A,text,States/UTs exactly as printed. NOT split and NOT counted here - use ngpl_paths.normalise_states().
+pipeline_master.csv,pdf_table,A,text,Which of the register's 9 tables this row came from.
+pipeline_master.csv,pdf_row,A,integer,"Row number within that table, for row-span verification."
+pipeline_master.csv,source_document,A,text,"Source file name, 20251231_NGPL.pdf."
+pipeline_master.csv,in_graph_scope,A,boolean,"TRUE for the 37 Common Carrier pipelines. Rule stated in README s3, not a judgement call."
+pipeline_master.csv,notes,A,text,"Per-row caveats: merged cells, shared length cells, measured zeros."
+pipeline_topology.csv,pipeline_id,A,text,Foreign key to pipeline_master.csv.
+pipeline_topology.csv,pipeline_name,A,text,Copied from the master for readability.
+pipeline_topology.csv,topology_class,A,text,"linear (route named) or areal (service area named). Listed explicitly, not regex-derived."
+pipeline_topology.csv,n_waypoints_stated,A,count,Number of route points the pipeline's own name states. 0 for areal.
+pipeline_topology.csv,in_graph_v1,A,boolean,TRUE for the 27 linear pipelines forming the v1 graph.
+pipeline_topology.csv,waypoint_sequence,A,text,"Waypoints in printed order, ' -> ' separated."
+pipeline_topology.csv,waypoint_source,A,text,Always the pipeline name; the register states route points nowhere else.
+pipeline_topology.csv,topology_note,A,text,"Why a name was read the way it was, or why the pipeline is areal."
+node_candidates.csv,pipeline_id,A,text,Foreign key to pipeline_master.csv.
+node_candidates.csv,seq,A,integer,Position of this waypoint in the printed name. Gives segment ordering.
+node_candidates.csv,node_name,A,text,Waypoint name as printed in the pipeline title.
+node_candidates.csv,role,A,text,"origin / intermediate / terminus, derived from seq."
+node_candidates.csv,node_type,A,text,Placeholder resolved in step 2b.
+node_candidates.csv,state_ut,A,text,Placeholder resolved in step 2b.
+node_candidates.csv,latitude,B,degrees,Empty here by design; this step produces no coordinates.
+node_candidates.csv,longitude,B,degrees,Empty here by design; this step produces no coordinates.
+node_candidates.csv,coordinate_source,B,text,NOT_SOURCED at this stage.
+node_candidates.csv,coordinate_method,B,text,NOT_SOURCED at this stage.
+node_candidates.csv,coordinate_accuracy,B,text,NOT_SOURCED at this stage.
+node_candidates.csv,coordinate_date,B,date,Empty at this stage.
+node_candidates.csv,name_source,A,text,"Citation for the name, including external sources where a reading needed one."
+node_candidates.csv,provenance_category,A,text,A - the name is source-derived.
+pipeline_nodes.csv,node_id,A,text,"Stable published identifier N001-N056, assigned over ALL names alphabetically. Resolving a node later must never renumber the others."
+pipeline_nodes.csv,node_name,A,text,Name as printed in a pipeline title.
+pipeline_nodes.csv,node_class,C,text,"Interconnection if named by 2+ pipelines, else Terminal or IntermediateRoutePoint. Derived, reproducible."
+pipeline_nodes.csv,facility_type,A,text,"UNKNOWN - the register names the place, not the facility."
+pipeline_nodes.csv,state_ut,B,text,"State of the matched gazetteer entry, constrained to a state the pipeline is recorded as crossing."
+pipeline_nodes.csv,latitude,B,degrees (EPSG:4326),"Settlement centroid, NOT a facility location. Empty where unresolved - never 0."
+pipeline_nodes.csv,longitude,B,degrees (EPSG:4326),"Settlement centroid, NOT a facility location. Empty where unresolved - never 0."
+pipeline_nodes.csv,coordinate_status,B,text,resolved / ambiguous / unresolved. Exhaustive; drives the gap logic in step 6.
+pipeline_nodes.csv,coordinate_source,B,text,"GeoNames IN.txt, or UNRESOLVED."
+pipeline_nodes.csv,coordinate_method,B,text,Which matching tier and rule produced the match.
+pipeline_nodes.csv,coordinate_accuracy,B,text,What kind of object the coordinate is. Always says centroid where it is one.
+pipeline_nodes.csv,coordinate_date,B,date,Gazetteer access date.
+pipeline_nodes.csv,name_provenance,A,text,"A - pipeline name, PNGRB register."
+pipeline_nodes.csv,coordinate_provenance,B,text,"B - GeoNames gazetteer, state-constrained."
+pipeline_nodes.csv,pipelines,A,text,Semicolon list of pipelines naming this node.
+pipeline_nodes.csv,n_pipelines,C,count,Length of that list.
+pipeline_nodes.csv,roles,A,text,Semicolon list of roles this node plays.
+pipeline_nodes.csv,legacy_delta_km,B,km,"Distance to an independent coordinate of unknown provenance. Corroboration only, never a published value. Recomputed by the validator, never trusted as stored."
+pipeline_nodes.csv,status,B,text,Human-readable outcome including candidate counts.
+route_segments.csv,pipeline_id,A,text,Foreign key to pipeline_master.csv.
+route_segments.csv,seq_from,A,integer,Waypoint index at the start of this pair.
+route_segments.csv,seq_to,A,integer,Waypoint index at the end of this pair.
+route_segments.csv,from_node_id,A,text,Foreign key to pipeline_nodes.csv.
+route_segments.csv,to_node_id,A,text,Foreign key to pipeline_nodes.csv.
+route_segments.csv,from_node_name,A,text,Name at the start of this pair.
+route_segments.csv,to_node_name,A,text,Name at the end of this pair.
+route_segments.csv,from_status,B,text,coordinate_status of the start node.
+route_segments.csv,to_status,B,text,coordinate_status of the end node.
+route_segments.csv,segment_status,B,text,"drawable, or which end is missing. A gapped pair contributes no geometry."
+route_segments.csv,straight_line_km,B,km,"Geodesic distance, WGS 84 ellipsoid. Literal 'NA' where gapped - never 0."
+route_segments.csv,geometry_type,B,text,"reconstructed_straight_segment, or NONE where gapped."
+route_segments.csv,length_basis,B,text,"How the length was computed; CRS-free geodesic, so no projection error."
+route_segments.csv,provenance_category,B,text,B - computed from two Category-B node coordinates.
+route_status.csv,pipeline_id,A,text,Foreign key to pipeline_master.csv. All 37 in-scope pipelines appear.
+route_status.csv,pipeline_name,A,text,Copied from the topology table.
+route_status.csv,topology_class,A,text,linear or areal.
+route_status.csv,n_waypoints_stated,A,count,Waypoints the pipeline title states.
+route_status.csv,n_segments_stated,A,count,"Consecutive pairs implied, i.e. waypoints minus one."
+route_status.csv,n_segments_drawable,B,count,Pairs with two resolved endpoints.
+route_status.csv,n_segments_gap,B,count,Pairs broken by an unresolved node.
+route_status.csv,route_geometry_status,B,text,"complete / partial / none_all_segments_gapped / not_applicable_areal. Exhaustive, never blank."
+route_status.csv,straight_line_total_km,B,km,Geodesic total. Literal 'NA' unless geometry is complete - a partial total would understate the route.
+route_status.csv,straight_line_drawn_km,B,km,Geodesic total of the parts that could be drawn. 'NA' where none.
+route_status.csv,authorized_length_km,A,km,Copied from pipeline_master.csv; the validator checks it still agrees.
+route_status.csv,sinuosity_ratio,C,ratio,authorized_length_km divided by straight_line_total_km. 'NA' where not comparable.
+route_status.csv,length_excess_km,C,km,How far the geodesic exceeds the register length. Positive means the register is shorter.
+route_status.csv,sinuosity_flag,C,text,ok / marginally shorter / high ratio / FAIL / NA with reason. See README s8.8.
+route_status.csv,centroid_allowance_km,C,km,10 km per node. The shortfall a settlement centroid standing in for a terminal can explain.
+route_status.csv,path_assumption,A,text,Whether the printed order is read as a traversal. False for merged or branching authorizations.
+route_status.csv,geometry_note,A,text,"Why a pipeline is areal, not a path, or otherwise special."
+unsourced_locations.csv,location,A,text,A place name used as a route point in an earlier version of this dataset.
+unsourced_locations.csv,used_by,A,text,Which pipelines used it.
+unsourced_locations.csv,status,A,text,Why it is excluded: not stated as a route point anywhere in the register.
+unsourced_locations.csv,action,A,text,"Excluded from the graph, published here for transparency."
+pipeline_states.csv,pipeline_id,A,text,Foreign key to pipeline_master.csv.
+pipeline_states.csv,pipeline_name,A,text,Copied from the master for readability.
+pipeline_states.csv,pipeline_category,A,text,Common Carrier / Tie-in / Dedicated.
+pipeline_states.csv,status,A,text,Operational / Under Construction.
+pipeline_states.csv,in_graph_scope,A,boolean,TRUE for the 37 Common Carrier pipelines.
+pipeline_states.csv,state_ut,A,text,"One state or UT, canonical form. 'NOT_STATED' where the register records none - never blank, never dropped."
+pipeline_states.csv,states_covered_verbatim,A,text,"The register's cell exactly as printed, retained so the split can be re-checked."
+pipeline_states.csv,state_source,A,text,Always the register's States Covered column.
+pipeline_states.csv,normalisation_note,A,text,"Set where the canonical name differs from the printed form (abbreviation, '&', 'UT of', older name)."
+pipeline_states.csv,provenance_category,A,text,A. This table splits a source cell and computes nothing.
+pipeline_state_coverage.csv,pipeline_id,A,text,Foreign key to pipeline_master.csv.
+pipeline_state_coverage.csv,pipeline_name,A,text,Copied from the topology table.
+pipeline_state_coverage.csv,topology_class,A,text,linear or areal.
+pipeline_state_coverage.csv,n_states_register,C,count,How many states the register records for this pipeline.
+pipeline_state_coverage.csv,n_states_reached,C,count,How many of those at least one named route point lies in. 'NA' for areal.
+pipeline_state_coverage.csv,states_register,A,text,"The states the register records, semicolon separated."
+pipeline_state_coverage.csv,states_reached,C,text,States entered by at least one located node.
+pipeline_state_coverage.csv,states_not_reached,C,text,"The gap. For a finding row, these are states the pipeline's name cannot account for."
+pipeline_state_coverage.csv,n_nodes,C,count,Route points the pipeline's name states.
+pipeline_state_coverage.csv,n_nodes_unresolved,C,count,How many of those have no coordinate. Non-zero forces the inconclusive verdict.
+pipeline_state_coverage.csv,all_nodes_located,C,boolean,Required TRUE on any finding row.
+pipeline_state_coverage.csv,coverage_verdict,C,text,complete / incomplete_route_points_unnamed / inconclusive_unresolved_node / not_applicable_areal. Exhaustive. See README 8.8.
+pipeline_state_coverage.csv,evidence_note,C,text,"Why this verdict, in words, per row."
+pipeline_state_coverage.csv,provenance_category,C,text,C. This table compares two Category-A facts.
+pipeline_offtakes.csv,offtake_id,A,text,"Stable row identifier. GA IDs repeat, so this table is not keyed on them."
+pipeline_offtakes.csv,pdf_s_no,A,integer,The register's own S.No. Repeats where one GA taps the network several times.
+pipeline_offtakes.csv,ga_id,A,text,Geographical Area ID. NOT unique: 9.72 and 9.29 each appear twice.
+pipeline_offtakes.csv,ga_name,A,text,The CGD area as named in the register.
+pipeline_offtakes.csv,cgd_entity,A,text,The authorised city-gas distributor.
+pipeline_offtakes.csv,stpl_length_km,A,km,Spur line length. Sums reproduce the register's printed 558 km per table.
+pipeline_offtakes.csv,status,A,text,Operational (pp. 9-13) or Under Construction (pp. 17-18).
+pipeline_offtakes.csv,tap_from_verbatim,A,text,"What the register prints in the tap-off column, verbatim - including the rows that name a gas source rather than a pipeline."
+pipeline_offtakes.csv,transmission_entity,A,text,The transmission operator as recorded by the register.
+pipeline_offtakes.csv,tap_acronym_expansion,C,text,What the acronym is read as expanding to. 'NA' where unmapped.
+pipeline_offtakes.csv,pipeline_id,C,text,"The trunk pipeline this taps, or UNKNOWN. Mapped only where the acronym expands unambiguously AND the recorded entity matches that pipeline's operator."
+pipeline_offtakes.csv,pipeline_name_matched,C,text,"The register's own name for that ID, copied from the master - not a paraphrase, so id and name can be checked by exact equality."
+pipeline_offtakes.csv,link_basis,C,text,"Why the link was made, withheld or left unmapped. Never blank on an UNKNOWN row."
+pipeline_offtakes.csv,link_provenance_category,C,text,"C - the link is inferred, everything else in the row is transcribed."
+pipeline_offtakes.csv,pdf_page,A,integer,Page of the register this row was transcribed from.
+pipeline_offtakes.csv,source_document,A,text,20251231_NGPL.pdf.
+pipeline_offtakes.csv,provenance_category,A,text,"Which columns are A and which are C, stated per row."
+pipeline_edges.csv,edge_id,A,text,Stable edge identifier E001-E047.
+pipeline_edges.csv,pipeline_id,A,text,Foreign key to pipeline_master.csv.
+pipeline_edges.csv,pipeline_name,A,text,Copied from the master.
+pipeline_edges.csv,operator_code,A,text,Copied from the master.
+pipeline_edges.csv,pipeline_category,A,text,Copied from the master.
+pipeline_edges.csv,status,A,text,Copied from the master.
+pipeline_edges.csv,segment_order,A,integer,Position of this edge along the printed name.
+pipeline_edges.csv,from_node_id,A,text,Foreign key to pipeline_nodes.csv.
+pipeline_edges.csv,from_node_name,A,text,Route point as printed in the pipeline name.
+pipeline_edges.csv,to_node_id,A,text,Foreign key to pipeline_nodes.csv.
+pipeline_edges.csv,to_node_name,A,text,Route point as printed in the pipeline name.
+pipeline_edges.csv,from_node_class,C,text,"Interconnection / Terminal / IntermediateRoutePoint, from the node table."
+pipeline_edges.csv,to_node_class,C,text,"Interconnection / Terminal / IntermediateRoutePoint, from the node table."
+pipeline_edges.csv,directed,A,boolean,Always FALSE. The register states no flow direction and several of these lines reverse in operation.
+pipeline_edges.csv,direction_note,A,text,Says that from/to is presentation order only.
+pipeline_edges.csv,sequence_is_traversal,A,boolean,"FALSE for 17.03 and 17.20, whose printed order is not a single path."
+pipeline_edges.csv,traversal_note,A,text,"Why, on the two pipelines where it is FALSE. Blank otherwise."
+pipeline_edges.csv,geometry_available,B,boolean,FALSE on the 8 edges joining an unlocated node. Those edges are still published.
+pipeline_edges.csv,length_km,B,km,Geodesic between two settlement centroids. Literal 'NA' where no geometry - never 0.
+pipeline_edges.csv,length_method,B,text,"States that this is a centroid-to-centroid geodesic, NOT the routed length."
+pipeline_edges.csv,edge_status,B,text,"drawable, or which endpoint is missing."
+pipeline_edges.csv,gap_reason,B,text,Which node has no coordinate. Blank only on drawable edges.
+pipeline_edges.csv,edge_source,A,text,The pipeline name in the register - the only place route points are stated.
+pipeline_edges.csv,provenance_category,A,text,"A for topology, B for length."
+node_vulnerability.csv,node_id,A,text,Foreign key to pipeline_nodes.csv.
+node_vulnerability.csv,node_name,A,text,Route point as printed in a pipeline name.
+node_vulnerability.csv,state_ut,B,text,Copied from pipeline_nodes.csv.
+node_vulnerability.csv,coordinate_status,B,text,"resolved / ambiguous / unresolved. An unlocated node still has topology, so it still appears here."
+node_vulnerability.csv,n_pipelines,C,count,How many pipelines name this place.
+node_vulnerability.csv,pipelines,A,text,Which pipelines name it.
+node_vulnerability.csv,degree_stated,C,count,"Computed twice: '_stated' over the topology the register's pipeline names imply, '_drawable' over the edges whose endpoints both have coordinates. Number of edges at this node in the register's topology."
+node_vulnerability.csv,betweenness_stated,C,0-1,"Computed twice: '_stated' over the topology the register's pipeline names imply, '_drawable' over the edges whose endpoints both have coordinates. Brandes betweenness, normalised, UNWEIGHTED. Unweighted on purpose: lengths exist only on the drawable graph, and using them would make the two graphs incomparable. Cross-checked against networkx. (register's topology)"
+node_vulnerability.csv,is_articulation_stated,C,boolean,"Computed twice: '_stated' over the topology the register's pipeline names imply, '_drawable' over the edges whose endpoints both have coordinates. TRUE if removing this node increases the number of components — a single point of failure in the register's topology."
+node_vulnerability.csv,components_after_removal_stated,C,count,"Computed twice: '_stated' over the topology the register's pipeline names imply, '_drawable' over the edges whose endpoints both have coordinates. Components remaining once this node is removed from the register's topology."
+node_vulnerability.csv,largest_component_after_removal_stated,C,count,"Computed twice: '_stated' over the topology the register's pipeline names imply, '_drawable' over the edges whose endpoints both have coordinates. Size of the biggest surviving component after removing this node (register's topology)."
+node_vulnerability.csv,pairs_lost_on_removal_stated,C,count,"Computed twice: '_stated' over the topology the register's pipeline names imply, '_drawable' over the edges whose endpoints both have coordinates. Node pairs that can no longer reach each other. Pairs involving the removed node itself are excluded, so this measures damage to the REST of the network (register's topology)."
+node_vulnerability.csv,degree_drawable,C,count,"Computed twice: '_stated' over the topology the register's pipeline names imply, '_drawable' over the edges whose endpoints both have coordinates. Number of edges at this node in the drawable topology."
+node_vulnerability.csv,betweenness_drawable,C,0-1,"Computed twice: '_stated' over the topology the register's pipeline names imply, '_drawable' over the edges whose endpoints both have coordinates. Brandes betweenness, normalised, UNWEIGHTED. Unweighted on purpose: lengths exist only on the drawable graph, and using them would make the two graphs incomparable. Cross-checked against networkx. (drawable topology)"
+node_vulnerability.csv,is_articulation_drawable,C,boolean,"Computed twice: '_stated' over the topology the register's pipeline names imply, '_drawable' over the edges whose endpoints both have coordinates. TRUE if removing this node increases the number of components — a single point of failure in the drawable topology."
+node_vulnerability.csv,components_after_removal_drawable,C,count,"Computed twice: '_stated' over the topology the register's pipeline names imply, '_drawable' over the edges whose endpoints both have coordinates. Components remaining once this node is removed from the drawable topology."
+node_vulnerability.csv,largest_component_after_removal_drawable,C,count,"Computed twice: '_stated' over the topology the register's pipeline names imply, '_drawable' over the edges whose endpoints both have coordinates. Size of the biggest surviving component after removing this node (drawable topology)."
+node_vulnerability.csv,pairs_lost_on_removal_drawable,C,count,"Computed twice: '_stated' over the topology the register's pipeline names imply, '_drawable' over the edges whose endpoints both have coordinates. Node pairs that can no longer reach each other. Pairs involving the removed node itself are excluded, so this measures damage to the REST of the network (drawable topology)."
+node_vulnerability.csv,rank_betweenness_stated,C,rank,"Rank by betweenness, 1 = most central, ties share the lower rank (register's topology)."
+node_vulnerability.csv,rank_betweenness_drawable,C,rank,"Rank by betweenness, 1 = most central, ties share the lower rank (drawable topology)."
+node_vulnerability.csv,rank_shift,C,places,How far this node's betweenness rank moves between the two graphs. A large shift means the figure is sensitive to the unlocated nodes.
+node_vulnerability.csv,metric_certainty,C,text,"'certain' only when the two graphs agree on degree, articulation, betweenness and pairs lost. Otherwise no single figure should be quoted without its range."
+node_vulnerability.csv,interconnection_basis,C,text,"States that pipelines sharing a place name are TREATED as connected there, and that the register does not say so. README 8.10."
+node_vulnerability.csv,provenance_category,C,text,C throughout. Nothing here is stated by the register.
+edge_criticality.csv,edge_id,A,text,Foreign key to pipeline_edges.csv.
+edge_criticality.csv,pipeline_id,A,text,Foreign key to pipeline_master.csv.
+edge_criticality.csv,from_node_id,A,text,Foreign key to pipeline_nodes.csv.
+edge_criticality.csv,from_node_name,A,text,Route point at one end.
+edge_criticality.csv,to_node_id,A,text,Foreign key to pipeline_nodes.csv.
+edge_criticality.csv,to_node_name,A,text,Route point at the other end.
+edge_criticality.csv,geometry_available,B,boolean,FALSE where an endpoint has no coordinate.
+edge_criticality.csv,length_km,B,km,Copied from pipeline_edges.csv. Literal 'NA' where no geometry.
+edge_criticality.csv,is_bridge_stated,C,boolean,TRUE if cutting this one segment disconnects part of the register's topology.
+edge_criticality.csv,is_bridge_drawable,C,boolean,"Same over the drawable topology. Literal 'NA' where the edge has no geometry — never FALSE, which would imply it was tested."
+edge_criticality.csv,bridge_meaning,C,text,"Plain-language statement of what a bridge is, carried per row."
+edge_criticality.csv,interconnection_basis,C,text,As in node_vulnerability.csv.
+edge_criticality.csv,provenance_category,C,text,C.
+network_summary.csv,graph,C,text,'stated' or 'drawable'.
+network_summary.csv,definition,C,text,Which edges this row's graph contains. Never blank.
+network_summary.csv,n_nodes,C,count,"All 56 named nodes, including unlocated ones."
+network_summary.csv,n_edges,C,count,"47 stated, 39 drawable."
+network_summary.csv,n_components,C,count,"Connected components. The drawable count is higher because of missing coordinates, NOT because the network is more fragmented."
+network_summary.csv,largest_component,C,count,Nodes in the biggest component.
+network_summary.csv,reachable_pairs,C,count,Unordered node pairs that can reach each other.
+network_summary.csv,n_articulation_points,C,count,Nodes whose removal splits the graph.
+network_summary.csv,n_bridges,C,count,Edges whose removal splits the graph. 44 of 47 on the stated graph — the network is very nearly a tree.
+network_summary.csv,mean_degree,C,edges/node,2 x edges / nodes.
+network_summary.csv,provenance_category,C,text,C.

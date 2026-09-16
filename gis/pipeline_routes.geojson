@@ -1,0 +1,1133 @@
+{
+ "type": "FeatureCollection",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+  }
+ },
+ "metadata": {
+  "title": "Reconstructed route geometry, Indian natural gas Common Carrier pipelines",
+  "crs": "EPSG:4326 (CRS84 axis order, lon lat)",
+  "metric_crs_for_downstream_use": "EPSG:7755 (WGS 84 / India NSF LCC)",
+  "geometry_type": "reconstructed_straight_segment",
+  "NOT_AN_ALIGNMENT": true,
+  "densify_before_buffering": true,
+  "densify_note": "Parts have 2 vertices. Projecting a 2-vertex segment to EPSG:7755 draws a straight line in the projected plane, which departs from the geodesic by up to ~1.5 km near the middle of a 900 km segment. Densify along the geodesic before buffering.",
+  "provenance_category": "B",
+  "source_document": "20251231_NGPL.pdf",
+  "generated_by": "07_build_routes.py"
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "17.03.NGPL",
+    "pipeline_name": "Hazira-Vijaipur-Jagdishpur -GREP (Gas Rehabilitation and Expansion Project)-Dahej-Vijaipur HVJ/VDPL",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "partial",
+    "n_segments_stated": 3,
+    "n_segments_drawable": 1,
+    "n_segments_gap": 2,
+    "straight_line_drawn_km": 991.064,
+    "authorized_length_km": 6169.0,
+    "sinuosity_ratio": null,
+    "length_excess_km": null,
+    "sinuosity_flag": "NOT_COMPARABLE_non_path",
+    "waypoint_sequence": "Hazira -> Vijaipur -> Jagdishpur -> Dahej",
+    "node_ids": "N023;N055;N026;N014",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       80.82631,
+       26.50727
+      ],
+      [
+       72.59113,
+       21.7119
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "17.04.NGPL",
+    "pipeline_name": "Kakinada-Hyderabad-Uran-Ahmedabad (East West Pipeline)",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 3,
+    "n_segments_drawable": 3,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 1472.5,
+    "authorized_length_km": 1459.0,
+    "sinuosity_ratio": 0.991,
+    "length_excess_km": 13.5,
+    "sinuosity_flag": "REVIEW_marginally_shorter_within_centroid_tolerance",
+    "waypoint_sequence": "Kakinada -> Hyderabad -> Uran -> Ahmedabad",
+    "node_ids": "N031;N025;N054;N001",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       82.23809,
+       16.96036
+      ],
+      [
+       78.45636,
+       17.38405
+      ]
+     ],
+     [
+      [
+       78.45636,
+       17.38405
+      ],
+      [
+       72.93924,
+       18.87813
+      ]
+     ],
+     [
+      [
+       72.93924,
+       18.87813
+      ],
+      [
+       72.58727,
+       23.02579
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "17.05.NGPL",
+    "pipeline_name": "Dahej-Uran-Panvel-Dabhol",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 3,
+    "n_segments_drawable": 3,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 492.624,
+    "authorized_length_km": 920.0,
+    "sinuosity_ratio": 1.868,
+    "length_excess_km": -427.376,
+    "sinuosity_flag": "REVIEW_high_ratio_length_unexplained_by_named_points",
+    "waypoint_sequence": "Dahej -> Uran -> Panvel -> Dabhol",
+    "node_ids": "N014;N054;N045;N012",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       72.59113,
+       21.7119
+      ],
+      [
+       72.93924,
+       18.87813
+      ]
+     ],
+     [
+      [
+       72.93924,
+       18.87813
+      ],
+      [
+       73.11013,
+       18.98878
+      ]
+     ],
+     [
+      [
+       73.11013,
+       18.98878
+      ],
+      [
+       73.18001,
+       17.58971
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "17.10.NGPL",
+    "pipeline_name": "Dadri-Panipat",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 1,
+    "n_segments_drawable": 1,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 108.732,
+    "authorized_length_km": 132.0,
+    "sinuosity_ratio": 1.214,
+    "length_excess_km": -23.268,
+    "sinuosity_flag": "ok",
+    "waypoint_sequence": "Dadri -> Panipat",
+    "node_ids": "N013;N043",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       77.55403,
+       28.55257
+      ],
+      [
+       76.96825,
+       29.38747
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "17.14.NGPL",
+    "pipeline_name": "Uran-Trombay",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 1,
+    "n_segments_drawable": 1,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 14.109,
+    "authorized_length_km": 24.0,
+    "sinuosity_ratio": 1.701,
+    "length_excess_km": -9.891,
+    "sinuosity_flag": "REVIEW_high_ratio_length_unexplained_by_named_points",
+    "waypoint_sequence": "Uran -> Trombay",
+    "node_ids": "N054;N052",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       72.93924,
+       18.87813
+      ],
+      [
+       72.9,
+       19.0
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "18.02.NGPL",
+    "pipeline_name": "Hazira-Ankleshwar (HAPi)",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 1,
+    "n_segments_drawable": 1,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 65.601,
+    "authorized_length_km": 73.0,
+    "sinuosity_ratio": 1.113,
+    "length_excess_km": -7.399,
+    "sinuosity_flag": "ok",
+    "waypoint_sequence": "Hazira -> Ankleshwar",
+    "node_ids": "N023;N003",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       72.64758,
+       21.13419
+      ],
+      [
+       72.99001,
+       21.63236
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "5.05.NGPL",
+    "pipeline_name": "Shahdol-Phulpur",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 1,
+    "n_segments_drawable": 1,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 260.485,
+    "authorized_length_km": 312.0,
+    "sinuosity_ratio": 1.198,
+    "length_excess_km": -51.515,
+    "sinuosity_flag": "ok",
+    "waypoint_sequence": "Shahdol -> Phulpur",
+    "node_ids": "N049;N047",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       81.3619,
+       23.29356
+      ],
+      [
+       82.0895,
+       25.54895
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "17.19.NGPL",
+    "pipeline_name": "Uran-Taloja",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 1,
+    "n_segments_drawable": 1,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 28.424,
+    "authorized_length_km": 42.0,
+    "sinuosity_ratio": 1.478,
+    "length_excess_km": -13.576,
+    "sinuosity_flag": "ok",
+    "waypoint_sequence": "Uran -> Taloja",
+    "node_ids": "N054;N051",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       72.93924,
+       18.87813
+      ],
+      [
+       73.09837,
+       19.08555
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "17.09.NGPL",
+    "pipeline_name": "Chainsa-Jhajjar-Hissar",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "partial",
+    "n_segments_stated": 2,
+    "n_segments_drawable": 1,
+    "n_segments_gap": 1,
+    "straight_line_drawn_km": 109.443,
+    "authorized_length_km": 455.0,
+    "sinuosity_ratio": null,
+    "length_excess_km": null,
+    "sinuosity_flag": "NA_incomplete_geometry",
+    "waypoint_sequence": "Chainsa -> Jhajjar -> Hissar",
+    "node_ids": "N011;N029;N024",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       76.6565,
+       28.6063
+      ],
+      [
+       75.72294,
+       29.15394
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "17.12.NGPL",
+    "pipeline_name": "Dadri-Bawana-Nangal",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 2,
+    "n_segments_drawable": 2,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 351.835,
+    "authorized_length_km": 921.0,
+    "sinuosity_ratio": 2.618,
+    "length_excess_km": -569.165,
+    "sinuosity_flag": "REVIEW_high_ratio_length_unexplained_by_named_points",
+    "waypoint_sequence": "Dadri -> Bawana -> Nangal",
+    "node_ids": "N013;N006;N041",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       77.55403,
+       28.55257
+      ],
+      [
+       77.03431,
+       28.7982
+      ]
+     ],
+     [
+      [
+       77.03431,
+       28.7982
+      ],
+      [
+       76.37574,
+       31.38966
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "5.01.NGPL",
+    "pipeline_name": "Mehsana-Bhatinda",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 1,
+    "n_segments_drawable": 1,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 774.907,
+    "authorized_length_km": 1943.0,
+    "sinuosity_ratio": 2.507,
+    "length_excess_km": -1168.093,
+    "sinuosity_flag": "REVIEW_high_ratio_length_unexplained_by_named_points",
+    "waypoint_sequence": "Mehsana -> Bhatinda",
+    "node_ids": "N038;N007",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       72.38472,
+       23.59864
+      ],
+      [
+       74.93893,
+       30.20747
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "5.02.NGPL",
+    "pipeline_name": "Bhatinda-Gurdaspur",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 1,
+    "n_segments_drawable": 1,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 207.872,
+    "authorized_length_km": 261.0,
+    "sinuosity_ratio": 1.256,
+    "length_excess_km": -53.128,
+    "sinuosity_flag": "ok",
+    "waypoint_sequence": "Bhatinda -> Gurdaspur",
+    "node_ids": "N007;N019",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       74.93893,
+       30.20747
+      ],
+      [
+       75.40318,
+       32.03933
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "5.03.NGPL",
+    "pipeline_name": "Mallavaram-Bhopal-Bhilwara-Vijaipur",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "partial",
+    "n_segments_stated": 3,
+    "n_segments_drawable": 2,
+    "n_segments_gap": 1,
+    "straight_line_drawn_km": 1234.926,
+    "authorized_length_km": 1881.0,
+    "sinuosity_ratio": null,
+    "length_excess_km": null,
+    "sinuosity_flag": "NA_incomplete_geometry",
+    "waypoint_sequence": "Mallavaram -> Bhopal -> Bhilwara -> Vijaipur",
+    "node_ids": "N036;N009;N008;N055",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       81.64326,
+       16.48258
+      ],
+      [
+       77.40289,
+       23.25469
+      ]
+     ],
+     [
+      [
+       77.40289,
+       23.25469
+      ],
+      [
+       74.64081,
+       25.34707
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "17.16.NGPL",
+    "pipeline_name": "Dabhol-Bangalore",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 1,
+    "n_segments_drawable": 1,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 696.9,
+    "authorized_length_km": 1414.0,
+    "sinuosity_ratio": 2.029,
+    "length_excess_km": -717.1,
+    "sinuosity_flag": "REVIEW_high_ratio_length_unexplained_by_named_points",
+    "waypoint_sequence": "Dabhol -> Bangalore",
+    "node_ids": "N012;N004",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       73.18001,
+       17.58971
+      ],
+      [
+       77.59369,
+       12.97194
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "17.15.NGPL",
+    "pipeline_name": "Kochi-Koottanad-Bangalore-Mangalore",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 3,
+    "n_segments_drawable": 3,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 682.013,
+    "authorized_length_km": 1104.0,
+    "sinuosity_ratio": 1.619,
+    "length_excess_km": -421.987,
+    "sinuosity_flag": "REVIEW_high_ratio_length_unexplained_by_named_points",
+    "waypoint_sequence": "Kochi -> Koottanad -> Bangalore -> Mangalore",
+    "node_ids": "N033;N034;N004;N037",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       76.26022,
+       9.93988
+      ],
+      [
+       76.11663,
+       10.7578
+      ]
+     ],
+     [
+      [
+       76.11663,
+       10.7578
+      ],
+      [
+       77.59369,
+       12.97194
+      ]
+     ],
+     [
+      [
+       77.59369,
+       12.97194
+      ],
+      [
+       74.85603,
+       12.91723
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "5.08.NGPL",
+    "pipeline_name": "Ennore-Tuticorin",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 1,
+    "n_segments_drawable": 1,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 550.506,
+    "authorized_length_km": 1431.0,
+    "sinuosity_ratio": 2.599,
+    "length_excess_km": -880.494,
+    "sinuosity_flag": "REVIEW_high_ratio_length_unexplained_by_named_points",
+    "waypoint_sequence": "Ennore -> Tuticorin",
+    "node_ids": "N018;N053",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       80.32835,
+       13.24751
+      ],
+      [
+       78.13425,
+       8.76735
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "17.20.NGPL",
+    "pipeline_name": "Jagdishpur-Haldia-Bokaro Dhamra-Paradip-Barauni-Guwahati",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 6,
+    "n_segments_drawable": 6,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 2707.469,
+    "authorized_length_km": 3546.0,
+    "sinuosity_ratio": null,
+    "length_excess_km": null,
+    "sinuosity_flag": "NOT_COMPARABLE_non_path",
+    "waypoint_sequence": "Jagdishpur -> Haldia -> Bokaro -> Dhamra -> Paradip -> Barauni -> Guwahati",
+    "node_ids": "N026;N021;N010;N015;N046;N005;N020",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       80.82631,
+       26.50727
+      ],
+      [
+       88.10975,
+       22.06046
+      ]
+     ],
+     [
+      [
+       88.10975,
+       22.06046
+      ],
+      [
+       86.15161,
+       23.66934
+      ]
+     ],
+     [
+      [
+       86.15161,
+       23.66934
+      ],
+      [
+       86.89654,
+       20.7955
+      ]
+     ],
+     [
+      [
+       86.89654,
+       20.7955
+      ],
+      [
+       86.7,
+       20.28333
+      ]
+     ],
+     [
+      [
+       86.7,
+       20.28333
+      ],
+      [
+       85.976,
+       25.4709
+      ]
+     ],
+     [
+      [
+       85.976,
+       25.4709
+      ],
+      [
+       91.7458,
+       26.1844
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "5.13.NGPL",
+    "pipeline_name": "Mumbai-Nagpur-Jharsuguda",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 2,
+    "n_segments_drawable": 2,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 1203.945,
+    "authorized_length_km": 1755.0,
+    "sinuosity_ratio": 1.458,
+    "length_excess_km": -551.055,
+    "sinuosity_flag": "ok",
+    "waypoint_sequence": "Mumbai -> Nagpur -> Jharsuguda",
+    "node_ids": "N039;N040;N030",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       72.88261,
+       19.07283
+      ],
+      [
+       79.08491,
+       21.14631
+      ]
+     ],
+     [
+      [
+       79.08491,
+       21.14631
+      ],
+      [
+       84.00698,
+       21.85531
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "5.12.NGPL",
+    "pipeline_name": "Srikakulam-Angul",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 1,
+    "n_segments_drawable": 1,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 308.466,
+    "authorized_length_km": 690.0,
+    "sinuosity_ratio": 2.237,
+    "length_excess_km": -381.534,
+    "sinuosity_flag": "REVIEW_high_ratio_length_unexplained_by_named_points",
+    "waypoint_sequence": "Srikakulam -> Angul",
+    "node_ids": "N050;N002",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       83.89751,
+       18.2989
+      ],
+      [
+       85.10192,
+       20.84089
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "5.07.NGPL",
+    "pipeline_name": "Ennore - Nellore",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 1,
+    "n_segments_drawable": 1,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 138.056,
+    "authorized_length_km": 220.0,
+    "sinuosity_ratio": 1.594,
+    "length_excess_km": -81.944,
+    "sinuosity_flag": "ok",
+    "waypoint_sequence": "Ennore -> Nellore",
+    "node_ids": "N018;N042",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       80.32835,
+       13.24751
+      ],
+      [
+       79.98697,
+       14.44992
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "5.10.NGPL",
+    "pipeline_name": "Kakinada-Vijayawada-Nellore",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 2,
+    "n_segments_drawable": 2,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 415.375,
+    "authorized_length_km": 667.0,
+    "sinuosity_ratio": 1.606,
+    "length_excess_km": -251.625,
+    "sinuosity_flag": "REVIEW_high_ratio_length_unexplained_by_named_points",
+    "waypoint_sequence": "Kakinada -> Vijayawada -> Nellore",
+    "node_ids": "N031;N056;N042",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       82.23809,
+       16.96036
+      ],
+      [
+       80.6466,
+       16.50745
+      ]
+     ],
+     [
+      [
+       80.6466,
+       16.50745
+      ],
+      [
+       79.98697,
+       14.44992
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "21.17.NGPL",
+    "pipeline_name": "Jamnagar to Dwarka (Gujarat)",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 1,
+    "n_segments_drawable": 1,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 116.109,
+    "authorized_length_km": 100.0,
+    "sinuosity_ratio": 0.861,
+    "length_excess_km": 16.109,
+    "sinuosity_flag": "REVIEW_marginally_shorter_within_centroid_tolerance",
+    "waypoint_sequence": "Jamnagar -> Dwarka",
+    "node_ids": "N028;N017",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       70.06673,
+       22.47292
+      ],
+      [
+       68.96778,
+       22.23944
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "5.14.NGPL",
+    "pipeline_name": "Hazaribagh-Ranchi",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 1,
+    "n_segments_drawable": 1,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 72.104,
+    "authorized_length_km": 71.0,
+    "sinuosity_ratio": 0.985,
+    "length_excess_km": 1.104,
+    "sinuosity_flag": "REVIEW_marginally_shorter_within_centroid_tolerance",
+    "waypoint_sequence": "Hazaribagh -> Ranchi",
+    "node_ids": "N022;N048",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       85.36162,
+       23.99241
+      ],
+      [
+       85.3094,
+       23.34316
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pipeline_id": "5.15.NGPL",
+    "pipeline_name": "Gurdaspur-Jammu",
+    "geometry_type": "reconstructed_straight_segment",
+    "NOT_AN_ALIGNMENT": true,
+    "warning": "Straight geodesic segments between gazetteer settlement centroids named in the pipeline title. NOT the surveyed right of way. Do not use for routing, land acquisition, encroachment or any distance-to-pipeline calculation presented as fact.",
+    "route_geometry_status": "complete",
+    "n_segments_stated": 1,
+    "n_segments_drawable": 1,
+    "n_segments_gap": 0,
+    "straight_line_drawn_km": 92.479,
+    "authorized_length_km": 160.0,
+    "sinuosity_ratio": 1.73,
+    "length_excess_km": -67.521,
+    "sinuosity_flag": "REVIEW_high_ratio_length_unexplained_by_named_points",
+    "waypoint_sequence": "Gurdaspur -> Jammu",
+    "node_ids": "N019;N027",
+    "vertex_provenance": "every vertex is a coordinate copied verbatim from pipeline_nodes.csv; no vertex was computed here",
+    "coordinate_accuracy": "settlement centroid (or named infrastructure feature); NOT a facility location",
+    "source_document": "PNGRB NGPL register 20251231_NGPL.pdf (names) + GeoNames IN.txt (coordinates)",
+    "provenance_category": "B"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       75.40318,
+       32.03933
+      ],
+      [
+       74.86167,
+       32.73528
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}
