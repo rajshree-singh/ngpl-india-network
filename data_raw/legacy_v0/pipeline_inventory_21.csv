@@ -1,0 +1,22 @@
+﻿Pipeline ID,Pipeline Name,Operator,Status,Capacity (MMSCMD),Length (km),Start Point,End Point,Intermediate Points,States Covered
+17.01.NGPL,Assam Regional Network,GAIL,Operational,2.5,8,Assam Regional Hub,Assam Regional Hub,—,Assam
+17.02.NGPL,Cauvery Basin Network,GAIL,Operational,4.33,242,Cauvery Basin,Puducherry,Cuddalore; Nagapattinam,Tamil Nadu; Puducherry
+17.03.NGPL,HVJ,GAIL,Operational,111.3,6732,Hazira,Jagdishpur,Dahej; Ahmedabad; Udaipur; Kota; Guna; Vijaipur; Agra; Kanpur,Gujarat; Rajasthan; Madhya Pradesh; Uttar Pradesh
+17.04.NGPL,East West Pipeline,Pipeline Infrastructure Limited,Operational,85,1485,Kakinada,Uran,Rajahmundry; Hyderabad; Solapur; Pune; Ahmedabad,Andhra Pradesh; Telangana; Maharashtra; Gujarat
+17.05.NGPL,Dahej–Uran–Panvel–Dabhol,GAIL,Operational,22.5,943,Dahej,Dabhol,Surat; Uran; Panvel; Chiplun,Gujarat; Maharashtra
+17.06.NGPL,KG Basin Network,GAIL,Operational,16,867,Kakinada,Visakhapatnam,Rajahmundry; Anakapalle,Andhra Pradesh
+17.07.NGPL,Gujarat Regional Network,GAIL,Operational,8.31,585,Dahej,Ahmedabad,Bharuch; Vadodara,Gujarat
+17.08.NGPL,Agartala Regional Network,GAIL,Operational,2,65,Agartala,Agartala,Udaipur (Tripura),Tripura
+17.10.NGPL,Dadri–Panipat,Indian Oil Corporation Limited,Operational,20,143,Dadri,Panipat,Sonipat,Uttar Pradesh; Haryana
+17.13.NGPL,Mumbai Regional Network,GAIL,Operational,7.04,125,Mumbai,Mumbai,Navi Mumbai; Thane,Maharashtra
+17.14.NGPL,Uran–Trombay,Oil and Natural Gas Corporation,Operational,6,24,Uran,Trombay,Nhava Sheva,Maharashtra
+5.01.NGPL,Mehsana–Bhatinda,Gujarat Gas Infrastructure Limited,Under Construction,83.11,1943,Mehsana,Bhatinda,Palanpur; Abu Road; Ajmer; Jaipur; Rewari; Hisar,Gujarat; Rajasthan; Haryana; Punjab
+5.02.NGPL,Bhatinda–Gurdaspur,Gujarat Gas Infrastructure Limited,Under Construction,42.42,261,Bhatinda,Gurdaspur,Moga; Amritsar,Punjab
+5.03.NGPL,Mallavaram–Bhopal–Bhilwara–Vijaipur,GAIL India Transport Infrastructure Limited,Under Construction,78.25,1881,Mallavaram,Vijaipur,Vijayawada; Hyderabad; Nanded; Bhopal; Kota; Bhilwara,Andhra Pradesh; Telangana; Maharashtra; Madhya Pradesh; Rajasthan; Gujarat
+17.16.NGPL,Dabhol–Bangalore,GAIL,Under Construction,16,1414,Dabhol,Bangalore,Ratnagiri; Panaji; Hubballi; Tumakuru,Maharashtra; Goa; Karnataka
+17.15.NGPL,Kochi–Koottanad–Bangalore–Mangalore,GAIL,Under Construction,16,1104,Kochi,Mangalore,Thrissur; Koottanad; Coimbatore; Bangalore; Hassan,Kerala; Tamil Nadu; Karnataka
+5.08.NGPL,Ennore–Tuticorin,Indian Oil Corporation Limited,Under Construction,84.67,1431,Ennore,Tuticorin,Chennai; Vellore; Salem; Madurai,Tamil Nadu
+17.20.NGPL,Jagdishpur–Haldia–Bokaro–Dhamra–Paradip–Barauni–Guwahati,GAIL,Under Construction,23,3546,Jagdishpur,Guwahati,Varanasi; Patna; Barauni; Dhanbad; Bokaro; Asansol; Haldia; Cuttack; Dhamra; Paradip; Siliguri,Uttar Pradesh; Bihar; Jharkhand; West Bengal; Odisha; Assam
+42.01.NGPL,North-East Natural Gas Pipeline Grid,Indradhanush Gas Grid Limited,Under Construction,4.75,1688,Guwahati,Agartala,Shillong; Itanagar; Kohima; Imphal; Aizawl,Assam; Meghalaya; Arunachal Pradesh; Nagaland; Manipur; Mizoram; Tripura
+5.13.NGPL,Mumbai–Nagpur–Jharsuguda,GAIL,Under Construction,16.5,1755,Mumbai,Jharsuguda,Nashik; Jalgaon; Nagpur; Raipur; Sambalpur,Maharashtra; Madhya Pradesh; Chhattisgarh; Odisha
+5.12.NGPL,Srikakulam–Angul,GAIL,Under Construction,6.65,690,Srikakulam,Angul,Berhampur; Bhubaneswar; Dhenkanal,Andhra Pradesh; Odisha
