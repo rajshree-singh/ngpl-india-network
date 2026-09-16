@@ -14,12 +14,12 @@ version: 1.0.0
 date-released: "2026-09-16"
 license: CC-BY-4.0
 license-url: "https://creativecommons.org/licenses/by/4.0/"
-repository-code: "https://github.com/[YOUR-GITHUB-USERNAME]/ngpl-india-network"
+repository-code: "https://github.com/rajshree-singh/ngpl-india-network"
 doi: "[ZENODO DOI — add after first release]"
 authors:
-  - family-names: "[FAMILY NAME]"
-    given-names: "[GIVEN NAMES]"
-    affiliation: "[AFFILIATION]"
+  - family-names: "Rajshree Singh"
+    given-names: "Rajshree"
+    affiliation: "Jaypee Institute of information technology"
     orcid: "https://orcid.org/[YOUR ORCID]"
 keywords:
   - critical infrastructure
