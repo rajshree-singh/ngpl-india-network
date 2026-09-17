@@ -15,7 +15,7 @@ date-released: "2026-09-16"
 license: CC-BY-4.0
 license-url: "https://creativecommons.org/licenses/by/4.0/"
 repository-code: "https://github.com/rajshree-singh/ngpl-india-network"
-doi: "[ZENODO DOI — add after first release]"
+doi: "10.5281/zenodo.22810051"
 authors:
   - family-names: "Rajshree Singh"
     given-names: "Rajshree"
