@@ -178,19 +178,7 @@ if lp:
           not drift, "coordinate moved without its metadata: " + str(drift[:6]))
     if recomp:
         v=sorted(x for _,x in recomp)
-        k=len(v)
-        # True median. v[k//2] alone is the UPPER middle value on an even-length
-        # list, which is not a median: on the 44 comparable nodes it reports
-        # 0.95 km where the median is 0.86 km. This line only prints, so no check
-        # was ever wrong -- but the number was quoted in the README, which is
-        # exactly how a display bug becomes a published one.
-        med = v[k//2] if k % 2 else (v[k//2 - 1] + v[k//2]) / 2
-        # Linear interpolation between order statistics -- the convention numpy
-        # and pandas use, so a reader recomputing this gets the same number.
-        _i = 0.9 * (k - 1); _lo = int(_i)
-        p90 = v[_lo] + (_i - _lo) * (v[min(_lo + 1, k - 1)] - v[_lo])
-        print(f"      recomputed offsets over {k} comparable nodes: "
-              f"median {med:.2f} km, 90th pct {p90:.2f} km, max {v[-1]:.2f} km "
+        print(f"      recomputed: median {v[len(v)//2]:.2f} km, max {v[-1]:.2f} km "
               f"({max(recomp,key=lambda t:t[1])[0]})")
 else:
     skip("group 5: recomputed offset against the independent table (2 checks)",

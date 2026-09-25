@@ -60,6 +60,32 @@ pipeline_nodes.csv,n_pipelines,C,count,Length of that list.
 pipeline_nodes.csv,roles,A,text,Semicolon list of roles this node plays.
 pipeline_nodes.csv,legacy_delta_km,B,km,"Distance to an independent coordinate of unknown provenance. Corroboration only, never a published value. Recomputed by the validator, never trusted as stored."
 pipeline_nodes.csv,status,B,text,Human-readable outcome including candidate counts.
+node_geocode_review.csv,node_id,A,text,"Stable published identifier N001-N056, assigned over ALL names alphabetically. Resolving a node later must never renumber the others."
+node_geocode_review.csv,node_name,A,text,Name as printed in a pipeline title.
+node_geocode_review.csv,gazetteer_name,B,text,Name of the matched GeoNames entry. Differs from node_name where the gazetteer spells the place differently; alias_note records why the entry is still the right place.
+node_geocode_review.csv,alias_note,B,text,"Spelling or administrative difference between the register's name and the gazetteer's, and the reason the chosen entry is the place the register means. Non-empty on 9 rows; empty where the two names agree."
+node_geocode_review.csv,pipelines,A,text,Semicolon list of pipelines naming this node.
+node_geocode_review.csv,n_pipelines,C,count,Length of that list.
+node_geocode_review.csv,roles,A,text,Semicolon list of roles this node plays.
+node_geocode_review.csv,latitude,B,degrees (EPSG:4326),"Settlement centroid, NOT a facility location. Empty where unresolved - never 0."
+node_geocode_review.csv,longitude,B,degrees (EPSG:4326),"Settlement centroid, NOT a facility location. Empty where unresolved - never 0."
+node_geocode_review.csv,state_ut,B,text,"State of the matched gazetteer entry, constrained to a state the pipeline is recorded as crossing."
+node_geocode_review.csv,geonameid,B,text,"GeoNames integer identifier of the matched entry, so every published coordinate traces to one gazetteer record. Empty on the 5 rows with no coordinate - never 0."
+node_geocode_review.csv,coordinate_source,B,text,"GeoNames IN.txt, or UNRESOLVED."
+node_geocode_review.csv,coordinate_method,B,text,Which matching tier and rule produced the match.
+node_geocode_review.csv,coordinate_accuracy,B,text,What kind of object the coordinate is. Always says centroid where it is one.
+node_geocode_review.csv,coordinate_date,B,date,Gazetteer access date.
+node_geocode_review.csv,n_matches_in_state,C,count,Number of gazetteer entries of this name inside the states the register records the pipeline as crossing. 0 where the name does not occur there.
+node_geocode_review.csv,n_matches_country,C,count,"Same count over the whole of India. Never below n_matches_in_state; the difference is what the state constraint removed, which is the only reason the match is defensible."
+node_geocode_review.csv,legacy_lat,B,degrees (EPSG:4326),"Latitude of the same name in an independent node table of unknown provenance. Corroboration only, never a published value; legacy_delta_km is the distance. Empty on 10 rows - never 0."
+node_geocode_review.csv,legacy_lon,B,degrees (EPSG:4326),Longitude of that same corroborating point. Empty on the same rows as legacy_lat - never 0.
+node_geocode_review.csv,legacy_delta_km,B,km,"Distance to an independent coordinate of unknown provenance. Corroboration only, never a published value. Recomputed by the validator, never trusted as stored."
+node_geocode_review.csv,status,B,text,Human-readable outcome including candidate counts.
+node_geocode_review.csv,node_class,C,text,"Interconnection if named by 2+ pipelines, else Terminal or IntermediateRoutePoint. Derived, reproducible."
+node_geocode_review.csv,facility_type,A,text,"UNKNOWN - the register names the place, not the facility."
+node_geocode_review.csv,coordinate_status,B,text,resolved / ambiguous / unresolved. Exhaustive; drives the gap logic in step 6.
+node_geocode_review.csv,name_provenance,A,text,"A - pipeline name, PNGRB register."
+node_geocode_review.csv,coordinate_provenance,B,text,"B - GeoNames gazetteer, state-constrained."
 route_segments.csv,pipeline_id,A,text,Foreign key to pipeline_master.csv.
 route_segments.csv,seq_from,A,integer,Waypoint index at the start of this pair.
 route_segments.csv,seq_to,A,integer,Waypoint index at the end of this pair.
@@ -208,3 +234,20 @@ network_summary.csv,n_articulation_points,C,count,Nodes whose removal splits the
 network_summary.csv,n_bridges,C,count,Edges whose removal splits the graph. 44 of 47 on the stated graph — the network is very nearly a tree.
 network_summary.csv,mean_degree,C,edges/node,2 x edges / nodes.
 network_summary.csv,provenance_category,C,text,C.
+node_missingness_sensitivity.csv,distortion_rank,C,rank,"Rank of the node by spearman_rho_if_missing, ascending; 1 = its missing location would most change the order of the other nodes"
+node_missingness_sensitivity.csv,node_id,A,,"Node identifier, as in pipeline_nodes.csv"
+node_missingness_sensitivity.csv,node_name,A,,Route-point name as printed in the register
+node_missingness_sensitivity.csv,coordinate_status,B,,"resolved / ambiguous / unresolved, as in pipeline_nodes.csv"
+node_missingness_sensitivity.csv,degree_stated,C,edges,Degree of the node on G_stated (all 47 edges)
+node_missingness_sensitivity.csv,betweenness_stated,C,dimensionless,Normalised unweighted betweenness on G_stated
+node_missingness_sensitivity.csv,spearman_rho_if_missing,C,dimensionless,Spearman rank correlation between the other 55 nodes' betweenness on G_stated and on G_stated with this node's edges removed
+node_missingness_sensitivity.csv,kendall_tau_b_if_missing,C,dimensionless,"As spearman_rho_if_missing, using Kendall tau-b"
+node_missingness_sensitivity.csv,top5_retained_if_missing,C,count (0-5),"Of the five most central other nodes on G_stated, how many remain in the top five when this node's edges are removed"
+node_missingness_sensitivity.csv,betweenness_mass_lost_if_missing,C,fraction,1 - (sum of the other nodes' betweenness with this node's edges removed) / (sum on G_stated)
+node_missingness_sensitivity.csv,provenance_category,C,,"Provenance class of the row: C, derived analytical"
+ranking_agreement.csv,comparison,C,,"Which rankings are compared: G_stated vs G_drawable, over all 56 nodes or the 51 located nodes"
+ranking_agreement.csv,n_nodes,C,count,Number of nodes compared
+ranking_agreement.csv,spearman_rho,C,dimensionless,Spearman rank correlation of betweenness between the two topologies
+ranking_agreement.csv,kendall_tau_b,C,dimensionless,Kendall tau-b of betweenness between the two topologies
+ranking_agreement.csv,top5_retained,C,count (0-5),Number of the five most central nodes on G_stated that are also in the top five on G_drawable
+ranking_agreement.csv,provenance_category,C,,"Provenance class of the row: C, derived analytical"

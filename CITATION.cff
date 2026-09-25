@@ -8,19 +8,33 @@ abstract: >-
   Common Carrier pipelines form the analytical scope and 27 admit a node-edge
   representation. Every variable is labelled source-derived, GIS-derived or
   analytically derived. Includes 215 automated validation checks and five
-  closure proofs against subtotals printed in the source.
+  closure proofs against subtotals printed in the source. Version 2 adds a
+  per-node measurement of how far a criticality ranking moves when one route
+  point has no coordinate, and a validator that checks the data dictionary
+  against the published headers in both directions.
 type: dataset
-version: 1.0.0
-date-released: "2026-09-16"
+version: 2.0.0
+# CHECK before release: set this to the date Zenodo shows for version 2.
+date-released: "2026-09-25"
 license: CC-BY-4.0
 license-url: "https://creativecommons.org/licenses/by/4.0/"
 repository-code: "https://github.com/rajshree-singh/ngpl-india-network"
-doi: "10.5281/zenodo.22810051"
+doi: "10.5281/zenodo.22879173"
+# The creator list here MUST match the creators on the Zenodo record and the
+# dataset reference in any paper citing this record. All three are listed in all
+# three places. Change them together, never one alone.
+# Add "orcid:" to each author once the iDs are to hand; the field is optional and
+# is left out rather than filled with a placeholder.
 authors:
-  - family-names: "Rajshree Singh"
+  - family-names: "Singh"
     given-names: "Rajshree"
-    affiliation: "Jaypee Institute of information technology"
-    orcid: "https://orcid.org/0000-0002-0635-5115"
+    affiliation: "Department of Computer Application, Jaypee Institute of Information Technology, Noida, India"
+  - family-names: "Naqvi"
+    given-names: "Ila"
+    affiliation: "Department of Computer Application, Jaypee Institute of Information Technology, Noida, India"
+  - family-names: "Jain"
+    given-names: "Pallavi"
+    affiliation: "Department of Computer Application, Jaypee Institute of Information Technology, Noida, India"
 keywords:
   - critical infrastructure
   - natural gas transmission

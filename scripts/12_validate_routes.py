@@ -4,7 +4,7 @@
 
 Run:
   python 12_validate_routes.py            normal validation
-  python 12_validate_routes.py --mutate   self-test: corrupt the output 12 ways
+  python 12_validate_routes.py --mutate   self-test: corrupt the output 14 ways
                                           and confirm every corruption FAILS
 
 SKIPS ARE NOT PASSES. If any group cannot run, this prints INCOMPLETE and
