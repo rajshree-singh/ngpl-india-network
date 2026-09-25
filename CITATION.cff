@@ -13,16 +13,23 @@ abstract: >-
   point has no coordinate, and a validator that checks the data dictionary
   against the published headers in both directions.
 type: dataset
-version: 2.0.0
-# CHECK before release: set this to the date Zenodo shows for version 2.
+version: 2.0.1
 date-released: "2026-09-25"
 license: CC-BY-4.0
 license-url: "https://creativecommons.org/licenses/by/4.0/"
 repository-code: "https://github.com/rajshree-singh/ngpl-india-network"
-doi: "10.5281/zenodo.22879173"
-# The creator list here MUST match the creators on the Zenodo record and the
+# This version's DOI. The concept DOI, which always resolves to the newest
+# version, is 10.5281/zenodo.22810050 and is deliberately NOT used here: a
+# CITATION.cff describes the version it ships inside.
+doi: "10.5281/zenodo.22961485"
+# The creator list here MUST match the CREATORS on the Zenodo record and the
 # dataset reference in any paper citing this record. All three are listed in all
 # three places. Change them together, never one alone.
+# The accompanying Data in Brief article has a fourth author, Lakshay Saini, who
+# contributed language editing to the manuscript and not to this dataset. He is
+# a contributor on the Zenodo record, not a creator, and so is deliberately
+# absent here. A paper and the dataset it describes may have different author
+# lists; the article's CRediT statement is what records each contribution.
 # Add "orcid:" to each author once the iDs are to hand; the field is optional and
 # is left out rather than filled with a placeholder.
 authors:

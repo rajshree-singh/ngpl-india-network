@@ -1,19 +1,23 @@
 # Indian Natural Gas Pipeline Network — Graph and GIS Dataset
 
-**Status: IN PROGRESS — not yet suitable for publication.**
-Steps 1, 2, 6, 7 and 8 are complete and validated. The hazard-exposure layers are not. Section 9 states
-exactly what exists and what does not. Do not cite the GIS or exposure layers:
-the exposure layers are still derived from geometry this project has rejected
-(§8.1), and the reconstructed routes now in `gis/` are straight-line
-approximations, not alignments (§8.1, §8.8).
+**Status: RELEASED.** Every file in this record is complete and validated.
+Section 9 lists exactly what is here; §9.2 lists what is deliberately not.
+
+**One thing to read before using `gis/`.** The routes in `gis/` are straight
+segments between named route points. They are labelled
+`NOT_AN_ALIGNMENT = true` and they are **not** pipeline alignments. Distances
+measured along them are not route distances, and anything overlaid on them —
+hazard, population, land use — produces a figure about a line this project drew,
+not about a pipeline (§8.1, §8.5, §8.8).
 
 | | |
 |---|---|
-| Version | v0.6-dev (2026-09-15) |
+| Version | 2.0.1 (2026-09-25) |
+| DOI | [10.5281/zenodo.22961485](https://doi.org/10.5281/zenodo.22961485) — see §11 |
 | Primary source | PNGRB, *Natural Gas Pipeline Networks in India — December 2025* |
-| Coverage | 99 authorized natural gas pipelines; 37 in analytical scope; 27 in the v1 graph |
+| Coverage | 99 authorized natural gas pipelines; 37 in analytical scope; 27 in the graph |
 | Spatial reference | EPSG:4326 published; EPSG:7755 for all metric operations |
-| Licence | See §11 |
+| Licence | CC BY 4.0 for data, MIT for code — see §11 |
 
 ---
 
@@ -21,8 +25,8 @@ approximations, not alignments (§8.1, §8.8).
 
 A machine-readable reconstruction of India's authorized natural gas pipeline
 network, built from the Petroleum and Natural Gas Regulatory Board's periodic
-NGPL register, with a node–edge graph representation and geospatial hazard
-exposure layers.
+NGPL register, with a node–edge graph representation, straight-segment route
+geometry and node- and edge-level network measures.
 
 It is intended for national-scale network analysis. It is **not** an engineering
 dataset: it contains no surveyed alignments, no as-built centrelines, and no
@@ -161,7 +165,6 @@ confirmed by *both* name similarity and spatial agreement:
 |---|---|
 | Published geometry | EPSG:4326 |
 | Length, area, buffering | **EPSG:7755** (WGS 84 / India NSF LCC) |
-| Seismic zone source layer | custom LCC, numerically identical to EPSG:7755 (max deviation 4.7 cm nationally) |
 
 EPSG:3395 (World Mercator) must not be used for metric work here. A 5 km buffer
 built in it has a true half-width of 4.5–4.9 km varying with latitude, and
@@ -300,8 +303,9 @@ rather than totals; and its bounding boxes extend past the national border, so
 its results include two pipelines in Qinghai, China. Neither defect changes the
 finding, which rests on the name-match test, not the totals.
 
-The 5 km buffer and the seismic, population and flood exposure tables remain
-invalid pending regeneration at Steps 7–9.
+An earlier working version carried a 5 km corridor buffer and seismic,
+population and flood exposure tables built on the rejected geometry. None of
+them is in this record; see §9.2 for why they were not rebuilt.
 
 **8.2 Coordinates are settlement centroids, not facilities.** See §5.
 
@@ -321,10 +325,14 @@ defensible candidate.
 All five are **published as rows** with `coordinate_status` set, not dropped, so
 that the route and edge tables can express the gap rather than conceal it.
 
-**8.5 Exposure scores are not risk scores.** What is measured is co-location of
-an asset with a hazard and with population. There is no vulnerability term, no
-failure probability and no consequence model. Fields are named
-`*_exposure_score` accordingly.
+**8.5 There are no hazard, exposure or risk measures in this record.** No
+column here scores seismic, flood or population exposure, and none should be
+inferred from what is here. An earlier working version had such fields; they
+were built on geometry this project rejected (§8.1) and were not rebuilt (§9.2).
+Anyone adding such a layer should attach it to the node coordinates or to the
+register's own per-pipeline state list, never to the straight segments in
+`gis/`, and should note that 5 of 56 nodes have no coordinate at all (§8.4) and
+10 of 37 in-scope pipelines have no route representation (§8.3).
 
 **8.6 Length semantics.** The register publishes authorized, operating and
 under-construction length separately; all three are carried as distinct fields
@@ -614,8 +622,13 @@ licence does *not* cover, are in `LICENSE-DATA.md` and `LICENSE`.
 **Citation.** Cite the Zenodo record, not this README:
 
 > R. Singh, I. Naqvi, P. Jain, ngpl-india-network: a provenance-separated
-> reconstruction of India's authorised natural gas transmission network, Zenodo,
-> version 2.0.1, 2026. https://doi.org/10.5281/zenodo.22879173
+> reconstruction of India's authorised natural gas transmission network,
+> Zenodo, version 2.0.1, 2026. https://doi.org/10.5281/zenodo.22961485
+
+Zenodo also mints a **concept DOI**, `10.5281/zenodo.22810050`, which always
+resolves to the newest version. Cite the version DOI above in anything that
+quotes a figure or a file size from this record, because those change between
+versions; the concept DOI is for pointing a reader at "the dataset" in general.
 
 `CITATION.cff` carries the same information in machine-readable form; GitHub and
 Zenodo both read it. **The creator list must be identical in three places: the
@@ -623,8 +636,9 @@ Zenodo record, `CITATION.cff`, and the dataset reference in any paper citing
 this record.** All three list Rajshree Singh, Ila Naqvi and Pallavi Jain,
 Department of Computer Application, Jaypee Institute of Information Technology,
 Noida. If one changes, change all three in the same sitting — a reader who
-clicks the DOI sees the mismatch immediately. ORCID iDs are not yet recorded;
-the field is left out rather than filled with a placeholder.
+clicks the DOI sees the mismatch immediately. All three creators carry ORCID iDs
+on the Zenodo record; `CITATION.cff` does not yet repeat them, and the field is
+left out rather than filled with a placeholder.
 
 ## 12. Change log
 
@@ -656,3 +670,20 @@ source. The largest to date:
   the drawable topology so the cost of the unlocated nodes is visible (v0.6).
 - Hand-written betweenness corrected: it was exactly 2x too large, caught only by
   the networkx cross-check, ranks unaffected (v0.6).
+- Per-node missingness sensitivity added: for each node in turn, how far the
+  other 55 nodes' betweenness moves if that node had no coordinate (2.0.0).
+- `node_geocode_review.csv` was published with none of its 26 columns in the data
+  dictionary. Added, and `scripts/17_validate_dictionary_coverage.py` now tests
+  the dictionary against the real headers in both directions so the gap cannot
+  reopen silently (2.0.1).
+- Release metadata filled: `CITATION.cff` had carried `[YOUR-GITHUB-USERNAME]`,
+  `[FAMILY NAME]`, `[YOUR ORCID]` and no DOI, and `LICENSE` had carried
+  `[AUTHOR NAME]`, in a published record (2.0.1).
+- README corrected: §9 had listed four files that are not in the record, the
+  source PDF among them, and this header had read "IN PROGRESS — not yet
+  suitable for publication" with version `v0.6-dev` long after release. §6 listed
+  a CRS for a seismic layer that does not exist and §8.5 described
+  `*_exposure_score` fields that no file contains (2.0.1).
+- Mutation-test count corrected from 57 to the 52 that ship with a re-runnable
+  harness; the 13 credited to `10_validate_master.py` had no harness in the
+  record and were withdrawn rather than restated (2.0.1).
